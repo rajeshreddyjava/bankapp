@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<definition name="base.definition" template="/WEB-INF/jsp/layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/jsp/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+
+	<definition name="login" extends="base.definition">
+		<put-attribute name="title" value="Login Page" />
+		<put-attribute name="body" value="/WEB-INF/jsp/login.jsp" />
+	</definition>
+	<definition name="hello" extends="base.definition">
+		<put-attribute name="title" value="Login Page" />
+		<put-attribute name="body" value="/WEB-INF/jsp/hello.jsp" />
+	</definition>
+	<definition name="success" extends="base.definition">
+		<put-attribute name="title" value="Login Successful" />
+		<put-attribute name="body" value="/WEB-INF/jsp/success.jsp" />
+	</definition>
+	<definition name="register" extends="base.definition">
+		<put-attribute name="title" value="Login Successful" />
+		<put-attribute name="body" value="/WEB-INF/jsp/register.jsp" />
+	</definition>
+	
+	<definition name="customer_registration_personal_info"
+		extends="base.definition">
+		<put-attribute name="title" value="Registration Step 2" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/customer_registration_personal_info.jsp" />
+	</definition>
+	<definition name="customer_registration_confirm" extends="base.definition">
+		<put-attribute name="title" value="Confirmation" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/customer_registration_confirm.jsp" />
+	</definition>
+
+	<definition name="online_banking_info" extends="base.definition">
+		<put-attribute name="title" value="Online Banking Information" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/online_banking_info.jsp" />
+	</definition>
+	<definition name="deposit" extends="base.definition">
+		<put-attribute name="title" value="Online Deposit" />
+		<put-attribute name="body" value="/WEB-INF/jsp/deposit.jsp" />
+	</definition>
+	<definition name="deposit_confirm" extends="base.definition">
+		<put-attribute name="title" value="Deposit Confirm" />
+		<put-attribute name="body" value="/WEB-INF/jsp/deposit_confirm.jsp" />
+	</definition>
+	<definition name="account_summary" extends="base.definition">
+		<put-attribute name="title" value="Account Summary" />
+		<put-attribute name="body" value="/WEB-INF/jsp/account_summary.jsp" />
+	</definition>
+	<definition name="transfers" extends="base.definition">
+		<put-attribute name="title" value="Transfers" />
+		<put-attribute name="body" value="/WEB-INF/jsp/transfers.jsp" />
+	</definition>
+	<definition name="customer_profile" extends="base.definition">
+		<put-attribute name="title" value="Profile" />
+		<put-attribute name="body" value="/WEB-INF/jsp/customer_profile.jsp" />
+	</definition>
+	<definition name="customer_Service" extends="base.definition">
+		<put-attribute name="title" value="Customer Service" />
+		<put-attribute name="body" value="/WEB-INF/jsp/customer_service.jsp" />
+	</definition>
+
+	<definition name="deposit_error" extends="base.definition">
+		<put-attribute name="title" value="Error" />
+		<put-attribute name="body" value="/WEB-INF/jsp/error.jsp"/>
+	</definition>
+
+
+	<definition name="home" extends="base.definition">
+		<put-attribute name="title" value="Welcome" />
+		<put-attribute name="body" value="/WEB-INF/jsp/home.jsp" />
+	</definition>
+
+
+</tiles-definitions>

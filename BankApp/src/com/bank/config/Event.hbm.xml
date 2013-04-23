@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hibernate.domain">
+	<class name="Event" table="EVENTS">
+		<id name="id" column="EVENT_ID">
+			<generator class="native"></generator>
+		</id>
+		<property name="date" type="timestamp" column="EVENT_DATE"></property>
+		<property name="title"></property>
+		
+		<set name="participants" table="PERSON_EVENT" inverse="true">
+		<key column="EVENT_ID"></key>
+		<many-to-many class="Person" column="PERSON_ID"></many-to-many>
+		</set>
+	</class>
+
+	<class name="Person" table="PERSON">
+		<id name="id" column="PERSON_ID">
+			<generator class="native"></generator>
+		</id>
+		<property name="firstName" column="FIRST_NAME"></property>
+		<property name="lastName" column="LAST_NAME"></property>
+		<property name="age" column="AGE"></property>
+
+		<set name="events" table="PERSON_EVENT">
+			<key column="PERSON_ID"></key>
+			<many-to-many class="Event" column="EVENT_ID"></many-to-many>
+		</set>
+
+		<set name="emailAddresses" table="PERSON_EMAIL_ADDR">
+			<key column="PERSON_ID"></key>
+			<element type="string" column="EMAIL_ADDR"></element>
+		</set>
+	</class>
+</hibernate-mapping>

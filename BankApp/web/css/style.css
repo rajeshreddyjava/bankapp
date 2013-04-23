@@ -1,0 +1,169 @@
+.errorblock {
+	color: #000;
+	background-color: #ffEEEE;
+	border: 3px solid #ff0000;
+	padding: 8px;
+	margin: auto;
+	width: 30%;
+}
+
+
+ul {
+	list-style-type: none;
+	padding-top: 1.75cm;
+	overflow: hidden;
+	position: absolute;
+}
+
+li {
+	float: left;
+}
+
+ li.list{
+	list-style-type: square;
+	
+}
+table{
+	padding-left : 2em;
+	padding-top : 2em;
+	
+}
+form{
+	padding-top:2em;
+}
+h3{
+	padding-left : 4em;
+}
+.req {
+	color:red;
+	font-size: 150%
+}
+abbr{border-bottom:none;}
+
+ a.link{
+	display: block;
+	width: 180px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: Red;
+	text-align: center;
+	padding: 4px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.spacer{
+	display:inline-block; 
+	width: 150px;
+}
+#acct_summary{
+	position:relative;
+	padding-top:2em;
+	padding-left:50px;
+	width:80%;
+}
+
+a:hover{
+	background-color: gray;
+}
+a:active{
+	background-color: black;
+}
+
+.topnav{
+	font-weight: bold;
+	float:right;
+	font-size: 20px;
+	color: white;
+	
+}
+.menu{
+	
+}
+.confirm{
+	padding-top:2em;
+}
+.deposit {
+	padding-top:2em;
+	padding-left:2em;
+}
+
+.page {
+	position: relative;
+	margin: 0px 0 0 -250px;
+	left: 30%;
+	height: 960px;
+	width: 1209px
+}
+
+.main_content {
+	height: 70%;
+	background-color: lightblue;
+}
+
+.header {
+	background: url("../images/logo_1.gif");
+	position: relative;
+	height: 15%;
+	background-color: lightyellow;
+}
+
+.footer {
+	background-color: lightyellow;
+	height: 15% clear:   both;
+	height: 50px;
+	margin: auto;
+	padding-top: 10px;
+	text-align: center;
+}
+
+.menu1 {
+	background-color: #AFDCEC;
+	margin: 100px, 50px, 25px, 0;
+	font-weight: bold;
+	font-size: 20;
+	height: 400px;
+	width: 100px;
+	float: left;
+}
+
+
+
+.p_button{
+	padding-left: 5em;
+}
+.button {
+  background-image: url ('../image/button.png') no-repeat;
+  cursor:pointer;
+  font: bold;
+  }
+fieldset {
+    border-radius: 10px;
+    background: #eee;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    position: relative;
+    border: 2px groove threedface;
+    width: 50%;
+    size: auto;
+}
+ fieldset.login{
+	width: 25%;
+}
+fieldset.acct_sum{
+	width:30%;
+}
+.content{
+	padding-top:2em;
+}
+legend {
+    position: absolute;
+    top: -2px;
+    background: #fff;
+    padding: 10px 20px;
+    border: 2px groove threedface;
+    border-top: none;
+    box-shadow: inset 0 -5px 5px rgba(0,0,0,.2);
+    text-shadow: 1px 1px 2px rgba(0,0,0,.3);
+    font-weight: bold;
+}

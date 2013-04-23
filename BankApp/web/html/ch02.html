@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<script src="../scripts/jquery-1.9.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/my_style.css">
+</head>
+<body>
+<div id="header">
+<h2>Jump for joy sale</h2>
+</div>
+<div id="main">
+<div class="guess_box"><img src="../images/jump1.jpg"/></div>
+<div class="guess_box"><img src="../images/jump2.jpg"/></div>
+<div class="guess_box"><img src="../images/jump3.jpg"/></div>
+<div class="guess_box"><img src="../images/jump4.jpg"/></div>
+</div>
+
+<script>
+$(document).ready(function(){
+	$("div.guess_box").click(function(){
+		var discount = Math.floor(Math.random()*5 + 5);
+		var discount_msg = "<p>Your discount is " + discount + "%</p>";
+		//alert(discount);
+		$(".guess_box p").remove();
+		$(this).append(discount_msg);
+	});
+});
+
+</script>
+</body>
+</html>

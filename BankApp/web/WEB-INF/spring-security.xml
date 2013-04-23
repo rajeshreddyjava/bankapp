@@ -1,0 +1,30 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security-3.0.3.xsd">
+ 
+	<http auto-config="true">
+		<intercept-url pattern="/user/**" access="ROLE_MEMBER" />
+		<intercept-url pattern="/public/**" filters = "none"/>
+		<intercept-url pattern="/css/**" filters = "none"/>
+		<intercept-url pattern="/images/**" filters = "none"/>
+		<form-login login-page="/public/login.do" default-target-url="/user/welcome.do"
+			authentication-failure-url="/public/loginfailed.do" />
+		<logout logout-success-url="/public/logout.do" />
+	</http>
+	 <global-method-security pre-post-annotations="enabled" />
+	 
+	 <beans:bean class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler"/>
+ 
+ <beans:bean name="userLoginDetailsService" class="com.bank.service.UserLoginDetailsService"></beans:bean>
+ <beans:bean class="com.bank.dao.UserDaoImpl"></beans:bean>
+	<authentication-manager>
+	  <authentication-provider user-service-ref="userLoginDetailsService">
+		
+	  </authentication-provider>
+	</authentication-manager>
+ 
+</beans:beans>
