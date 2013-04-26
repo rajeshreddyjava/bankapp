@@ -41,7 +41,7 @@ $(function() {
 <title>Deposit</title>
 </head>
 <body>
-	<form:form id="deposit" commandName="depositForm" method="POST">
+	<form:form id="deposit" commandName="depositForm" enctype="multipart/form-data" method="POST">
 		<fieldset>
 		<legend>Deposit</legend>
 		<div class = "deposit">

@@ -22,7 +22,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bank.beans.DepositForm;
-import com.bank.beans.TransactionsForm;
 import com.bank.domain.Accounts;
 import com.bank.domain.BalanceHistory;
 import com.bank.domain.BalanceHistoryKey;
@@ -33,8 +32,6 @@ import com.bank.domain.Transaction;
 public class AccountsDao implements IAccountsDao {
 
 	private HibernateTemplate hibernateTemplate;
-	private SessionFactory sessionFactory;
-
 	@Autowired
 	
 	public HibernateTemplate getHibernateTemplate(SessionFactory sessionFactory) {
@@ -43,6 +40,7 @@ public class AccountsDao implements IAccountsDao {
 
 	@Override
 	@Transactional
+	@SuppressWarnings(value = { "unchecked","rawtypes" })
 	public Map<String, String> getAccountTypes(String userId)
 			throws DataAccessException {
 
@@ -60,6 +58,7 @@ public class AccountsDao implements IAccountsDao {
 		return accountMap;
 	}
 
+	@SuppressWarnings(value = { "unused","unchecked" })
 	@Transactional
 	public List<Accounts> getAccountSummary(String userId) {
 		Map<String, Double> summaryMap = new HashMap<String, Double>();
@@ -85,6 +84,7 @@ public class AccountsDao implements IAccountsDao {
 	}
 
 	@Override
+	@SuppressWarnings(value = { "all" })
 	@Transactional
 	public void processDeposit(DepositForm depositForm) throws IOException {
 
@@ -97,28 +97,24 @@ public class AccountsDao implements IAccountsDao {
 		customer.setUpdateTimestamp(new Date());
 		customer.setUpdateUser("Deposit_usr");
 
-		List currentBalanceList = hibernateTemplate
-				.find("select a.currentBalance from Accounts a where a.accountNumber=?",
+		List currentBalanceList = hibernateTemplate.find("select a.currentBalance from Accounts a where a.accountNumber=?",
 						depositForm.getAccountTypeSelected());
 
 		Session session = hibernateTemplate.getSessionFactory()
 				.getCurrentSession();
 		// session.beginTransaction();
 
-		Query updateCustomer = session
-				.createQuery("update Customer c set currentBalance = :currentBalance, c.updateTimestamp = :updateTime, c.updateUser =:updateUser where c.userId = :userId");
+		Query updateCustomer = session.createQuery("update Customer c set currentBalance = :currentBalance, c.updateTimestamp = :updateTime, c.updateUser =:updateUser where c.userId = :userId");
 
 		updateCustomer.setParameter("currentBalance", newBalance);
 		updateCustomer.setParameter("updateTime", new Date());
 		updateCustomer.setParameter("updateUser", "deposit");
 		updateCustomer.setParameter("userId", depositForm.getUserId());
 
-		System.out.println("Customer updated ---"
-				+ updateCustomer.executeUpdate());
+		System.out.println("Customer updated ---"+ updateCustomer.executeUpdate());
 		double currentBalance = (double) currentBalanceList.get(0);
 
-		Query updateAccounts = session
-				.createQuery("update Accounts a set a.currentBalance = a.currentBalance + :amount, a.updateTimestamp = :updateTime, a.updateUser =:updateUser where a.accountNumber = :accountNumber");
+		Query updateAccounts = session.createQuery("update Accounts a set a.currentBalance = a.currentBalance + :amount, a.updateTimestamp = :updateTime, a.updateUser =:updateUser where a.accountNumber = :accountNumber");
 
 		updateAccounts.setParameter("amount", newBalance);
 		updateAccounts.setParameter("updateTime", new Date());
@@ -126,8 +122,7 @@ public class AccountsDao implements IAccountsDao {
 		updateAccounts.setParameter("accountNumber",
 				depositForm.getAccountTypeSelected());
 
-		System.out.println("Accounts Updated - rows affected :"
-				+ updateAccounts.executeUpdate());
+		System.out.println("Accounts Updated - rows affected :" + updateAccounts.executeUpdate());
 
 		Transaction transaction = new Transaction();
 
@@ -145,8 +140,7 @@ public class AccountsDao implements IAccountsDao {
 		transaction.setUpdateUser("deposit_usr");
 		BalanceHistory balanceHistory = new BalanceHistory();
 		BalanceHistoryKey balanceHistoryKey = new BalanceHistoryKey();
-		balanceHistoryKey
-				.setAccountNumber(depositForm.getAccountTypeSelected());
+		balanceHistoryKey.setAccountNumber(depositForm.getAccountTypeSelected());
 		balanceHistoryKey.setBalanceDate(new Date());
 		balanceHistory.setPrimaryKey(balanceHistoryKey);
 		balanceHistory.setBalanceAtDate(newBalance);

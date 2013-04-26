@@ -64,7 +64,7 @@ public class AccountsController {
 		transactions = accountService.getTransactions(accountType, accountNumber, user.getUsername());	
 		viewName = TRANSACTIONS;
 		}
-		catch(Exception e){
+		catch(NullPointerException e){
 			viewName = ERROR;
 			e.printStackTrace();
 		}

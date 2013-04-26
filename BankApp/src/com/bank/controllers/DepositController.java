@@ -69,7 +69,7 @@ public class DepositController {
 		String userId = user.getUsername();
 		depositForm.setUserId(userId);
 		accountsService.processDeposit(depositForm);
-		if (bindingResult.hasErrors())
+		if (!bindingResult.hasErrors())
 			return DEPOSIT_CONFIRM;
 		else
 			return ERROR;

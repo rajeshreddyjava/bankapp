@@ -18,13 +18,10 @@
 	 <global-method-security pre-post-annotations="enabled" />
 	 
 	 <beans:bean class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler"/>
- 
  <beans:bean name="userLoginDetailsService" class="com.bank.service.UserLoginDetailsService"></beans:bean>
  <beans:bean class="com.bank.dao.UserDaoImpl"></beans:bean>
 	<authentication-manager>
 	  <authentication-provider user-service-ref="userLoginDetailsService">
-		
 	  </authentication-provider>
 	</authentication-manager>
- 
 </beans:beans>

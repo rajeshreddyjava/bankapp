@@ -22,6 +22,7 @@ public class AccountService implements IAccountsService {
 
 	@Autowired
 	public void setAccountsDao(IAccountsDao accountsDao) {
+		
 		this.accountsDao = accountsDao;
 	}
 
@@ -74,7 +75,7 @@ public class AccountService implements IAccountsService {
 		for(Transaction transaction : tList){
 			TransactionsForm form = new TransactionsForm();
 			form.setAmount(transaction.getAmount());
-			form.setTransactionType(transaction.getTansactionType());
+			form.setTransactionType(transaction.getOtherDetails());
 			form.setTransactionDate(transaction.getDateOfTransaction());
 			transactionList.add(form);
 		}

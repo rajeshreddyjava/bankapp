@@ -58,7 +58,6 @@ public class CustomerRegistrationController {
 	}
 
 	@RequestMapping(params = "_intro")
-	// method = RequestMethod.POST )
 	public String processIntro(
 			HttpServletRequest request,
 			HttpServletResponse response,
@@ -73,7 +72,6 @@ public class CustomerRegistrationController {
 	}
 
 	@RequestMapping(params = "_personal")
-	// method = RequestMethod.POST )
 	public String processPersonalInfo(
 			HttpServletRequest request,
 			HttpServletResponse response,
@@ -89,7 +87,6 @@ public class CustomerRegistrationController {
 	}
 
 	@RequestMapping(params = "_finish")
-	// method = RequestMethod.POST )
 	public String finishRegistration(
 			HttpServletRequest request,
 			HttpServletResponse response,
@@ -115,7 +112,6 @@ public class CustomerRegistrationController {
 	}
 
 	@RequestMapping(params = "_cancel")
-	// method = RequestMethod.POST )
 	public String cancelRegistration(
 			HttpServletRequest request,
 			HttpServletResponse response,
@@ -137,21 +133,23 @@ public class CustomerRegistrationController {
 
 	@ModelAttribute("dateFieldsList")
 	public List<ArrayList<String>> populateDateFields(ModelMap model) {
-
-		List<ArrayList<String>> datefieldList = customerRegistrationService
-				.populateDateFields();
+		List<ArrayList<String>> datefieldList = null;
+		try{
+		datefieldList = customerRegistrationService.populateDateFields();
+		}
+		catch(Exception e){
+		e.printStackTrace();
+		}
 		return datefieldList;
+		
 	}
 
 	@ModelAttribute("states")
 	public List<String> populateStates(ModelMap model) {
 		List<String> states = new ArrayList<String>();
-
-		// States state =
 		states.add(" ");
 		for (States state : States.values())
 			states.add(state.getStateValue());
-		// states.addAll(Arrays.asList(States.values()));
 		return states;
 	}
 

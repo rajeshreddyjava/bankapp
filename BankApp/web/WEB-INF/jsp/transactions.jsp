@@ -11,11 +11,20 @@
 <div>
 <fieldset>
 <legend>Transactions</legend>
+<table>
+<tr>
+<th colspan="2" width="33%">Type</th>
+<th colspan="2" width="33%">Amount</th>
+<th colspan="2"  width="33%">Date</th>
+</tr>
+
 <c:forEach var="transaction" items = "${transactions}">
-<c:out value = "${transaction.amount}"/> -- <c:out value="${transaction.transactionDate}"></c:out><br/>
+<tr>
+<td colspan="2" align="center"><c:out value="${transaction.transactionType}"></c:out></td> <td colspan="2" align="center"> &#36 <c:out value = "${transaction.amount}"/></td><td colspan="2" align="center"> <c:out value="${transaction.transactionDate}"></c:out></td>
+</tr>
 
 </c:forEach>
-
+</table>
 </fieldset>
 
 </div>
