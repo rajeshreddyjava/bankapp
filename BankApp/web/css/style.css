@@ -129,10 +129,14 @@ a:active{
 
 
 .p_button{
+	
 	padding-left: 5em;
+	font-family: sans-serif;
+	font-style: oblique;
+	font-weight: 900;
 }
 .button {
-  background-image: url ('../image/button.png') no-repeat;
+  background: url("../image/button.png") no-repeat;
   cursor:pointer;
   font: bold;
   }

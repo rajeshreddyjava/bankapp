@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -23,6 +24,8 @@ import com.bank.service.IAccountsService;
 public class AccountsController {
 	private IAccountsService accountService;
 	
+   static Logger log = Logger.getLogger(AccountsController.class.getName());
+	
 	@Autowired
 	public void setAccountService(IAccountsService accountService) {
 		this.accountService = accountService;
@@ -35,6 +38,7 @@ public class AccountsController {
        String viewName = null;
        List<AccountSummaryForm> summaryList = null;
        try{
+    	   log.info("Starting showAccountSummary() method...");
 		User user  =(User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		summaryList = accountService.getAccountSummary(user.getUsername());
 		session.setAttribute("summaryList", summaryList);
@@ -55,6 +59,7 @@ public class AccountsController {
 		List<TransactionsForm> transactions = null;
 		String accountNumber = null;
 		try{
+		log.info("Show transactions started...");
 		User user  =(User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		List<AccountSummaryForm> summaryList = (List)session.getAttribute("summaryList");
 		for(AccountSummaryForm form : summaryList){

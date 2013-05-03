@@ -25,5 +25,9 @@
 		<put-attribute name="title" value="Transactions" />
 		<put-attribute name="body" value="/WEB-INF/jsp/transactions.jsp" />
 	</definition>
+		<definition name="forgot_username" extends="base.definition">
+		<put-attribute name="title" value="Forgot Username" />
+		<put-attribute name="body" value="/WEB-INF/jsp/forgot_username.jsp" />
+	</definition>
 	
 	</tiles-definitions>

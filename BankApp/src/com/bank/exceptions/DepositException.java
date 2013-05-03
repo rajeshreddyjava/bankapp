@@ -2,11 +2,13 @@ package com.bank.exceptions;
 
 @SuppressWarnings("serial")
 public class DepositException extends Exception{
-	public DepositException(){
+	private String message;
+	public DepositException(String message){
+		this.message = message;
 		
 	}
 	public String toString(){
-		return "Exception while making deposit";
+		return message;
 	}
 
 }

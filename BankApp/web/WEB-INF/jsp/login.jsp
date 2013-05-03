@@ -32,7 +32,9 @@
 		<p class="p_button">
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="button" name="submit" type="submit" value="Login" />
 		</p>
+		<p align="center"><a href="public/forgot.do?credential=password.do">Forgot Password?</a>&nbsp&nbsp&nbsp <a href="public/forgot.do?credential=username">Forgot Username?</a></p>
 		</div>
+		
 </fieldset>
 
 	</form>
