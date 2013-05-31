@@ -33,6 +33,7 @@
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="button" name="submit" type="submit" value="Login" />
 		</p>
 		<p align="center"><a href="public/forgot.do?credential=password.do">Forgot Password?</a>&nbsp&nbsp&nbsp <a href="public/forgot.do?credential=username">Forgot Username?</a></p>
+		<p align="center"><a href="public/cust_reg.do">Open an Account</a></p>
 		</div>
 		
 </fieldset>

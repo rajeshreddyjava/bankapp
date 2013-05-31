@@ -64,6 +64,7 @@ public class CustomerRegistrationController {
 			@ModelAttribute("customerRegistrationForm") CustomerRegistrationForm customerRegistrationForm,
 			BindingResult bindingResult, SessionStatus sessionStatus,
 			Model model) {
+		
 		custRegValidator.validateIntro(customerRegistrationForm, bindingResult);
 		if (bindingResult.hasErrors())
 			return CUSTOMER_REGISTRATION_INTRO;
@@ -99,9 +100,8 @@ public class CustomerRegistrationController {
 		if (bindingResult.hasErrors())
 			return ONLINE_BANKING_INFO;
 		else {
-			if (customerRegistrationService
-					.insertCustomerData(customerRegistrationForm)) {
-				if (customerRegistrationService
+			if (customerRegistrationService.insertCustomerData(customerRegistrationForm)) {
+				if (customerRegistrationService 
 						.sendConfirmationEmail(customerRegistrationForm))
 					return CUSTOMER_REGISTRATION_CONFIRM;
 				else

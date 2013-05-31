@@ -14,7 +14,7 @@ public class TransfersController {
 		
 		
 		@RequestMapping(method=RequestMethod.GET)
-		public String showTransfers(ModelMap model){
+		public String initTransfers(ModelMap model){
 			return TRANSFERS;
 	
 

@@ -12,7 +12,7 @@
 		<fieldset  class="acct_sum">
 			<legend>Accounts</legend>
 			
-				<c:forEach var="account" items="${summary}">
+				<c:forEach var="account" items="${summaryList}">
 				<div id="acct_summary"><a href="user/accounts.do?type=<c:out value='${account.accountType}'/>"><c:out value="${account.accountType}" /></a><span class="spacer"></span><c:out value="${account.currentBalance}" /></div>
 				</c:forEach>
 		</fieldset>

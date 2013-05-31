@@ -1,6 +1,8 @@
 package com.bank.validator;
 
-import org.springframework.validation.BindingResult;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
@@ -44,11 +46,18 @@ public class CustomerRegistrationValidator implements Validator,
 //		ValidationUtils.rejectIfEmptyOrWhitespace(errors,
 //				"driverLicenseNumber", "required.driverLicenseNumber",
 //				"License Number is Requred");
+		Pattern emailPattern = Pattern.compile("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$");//("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$");
+		
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "homePhone",
 				"required.homephone", "Home Phone Number is Requred");
+		
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email",
 				"required.email", "Email address is Requred");
+		
 		CustomerRegistrationForm form = (CustomerRegistrationForm) customerRegistrationForm;
+		Matcher emailMatcher = emailPattern.matcher(form.getEmail());
+		if(!emailMatcher.find())
+			errors.reject("invalid.email");
 		if (!form.getEmail().equalsIgnoreCase(form.getConfirmEmail()))
 			errors.reject("donotmatch.email");
 		if (!form.getDriverLicenseNumber().isEmpty()) {

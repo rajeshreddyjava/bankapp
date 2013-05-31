@@ -6,6 +6,7 @@
 <BASE HREF="http://localhost:8080/BankApp/">
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <link type="text/css" href="css/jquery.datepick.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css"  href="css/jquery-ui.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title><tiles:insertAttribute name="title" ignore="true" /></title>
 </head>
@@ -17,5 +18,8 @@
 	</div>
 	<script src="scripts/jquery-1.9.1.min.js"></script>
 <script src="scripts/bank_scripts.js"></script>
+<script type="text/javascript" src="scripts/jquery-ui.js"></script>
+ 
+
 </body>
 </html>

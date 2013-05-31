@@ -9,7 +9,7 @@ public class BankException extends Exception {
 	
 	@Override
 	public String toString(){
-		return "Bank Exception" + this.message;
+		return "Bank Exception :" + this.message;
 	}
 
 }

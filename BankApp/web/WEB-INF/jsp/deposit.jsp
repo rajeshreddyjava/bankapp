@@ -5,36 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <%@ include file="include.jsp"%>
-<script type="text/javascript" src="css/jquery-1.8.0.min.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/base/jquery-ui.css">
 
 <script type="text/javascript">
 
-
-$(function() {
-	$('#cash').click(function () {
-        $('#checkFile').hide();
-	});
-
-	$('#check').click(function () {
-        $('#checkFile').show();
-	});
-	
-    $('.date-picker').datepicker( {
-        changeMonth: true,
-        changeDay: true,
-        changeYear: true,
-        showButtonPanel: true,
-        dateFormat: 'MM dd yy',
-        onClose: function(dateText, inst) { 
-            var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
-            var day = $("#ui-datepicker-div .ui-datepicker-day :selected").val();
-            var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
-            $(this).datepicker('setDate', new Date(year, month, day));
-        }
-    });
-});
 
 </script>
 

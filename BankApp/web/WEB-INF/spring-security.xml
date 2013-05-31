@@ -10,6 +10,7 @@
 		<intercept-url pattern="/user/**" access="ROLE_MEMBER" />
 		<intercept-url pattern="/public/**" filters = "none"/>
 		<intercept-url pattern="/css/**" filters = "none"/>
+		<intercept-url pattern="/scripts/**" filters = "none"/>
 		<intercept-url pattern="/images/**" filters = "none"/>
 		<form-login login-page="/public/login.do" default-target-url="/user/welcome.do"
 			authentication-failure-url="/public/loginfailed.do" />
