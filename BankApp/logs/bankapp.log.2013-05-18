@@ -1,0 +1,24 @@
+[WARN] 2013-05-18 23:23:58,856 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.BalanceHistoryKey
+[WARN] 2013-05-18 23:23:58,862 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.BalanceHistoryKey
+[ERROR] 2013-05-18 23:24:00,721 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table ACCOUNTS add index user_id (user_id), add constraint user_id foreign key (user_id) references CUSTOMER (CUSTOMER_ID)
+[ERROR] 2013-05-18 23:24:00,721 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-90c_4' (errno: 150)
+[ERROR] 2013-05-18 23:24:00,727 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table BALANCE_HISTORY add index account_number (account_number), add constraint account_number foreign key (account_number) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-05-18 23:24:00,727 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-90c_4' (errno: 150)
+[ERROR] 2013-05-18 23:24:00,741 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table TRANSACTIONS add index FKFE9871554FB2464A (account_ACCOUNT_ID), add constraint FKFE9871554FB2464A foreign key (account_ACCOUNT_ID) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-05-18 23:24:00,741 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-90c_4' (errno: 150)
+[INFO] 2013-05-18 23:24:01,149 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Initializing Tiles2 application context. . .
+[INFO] 2013-05-18 23:24:01,151 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Finished initializing Tiles2 application context.
+[INFO] 2013-05-18 23:24:01,295 org.apache.tiles.access.TilesAccess setContainer - Publishing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
+[WARN] 2013-05-18 23:24:01,778 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.BalanceHistoryKey
+[WARN] 2013-05-18 23:24:01,779 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.BalanceHistoryKey
+[ERROR] 2013-05-18 23:24:02,000 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table ACCOUNTS add index user_id (user_id), add constraint user_id foreign key (user_id) references CUSTOMER (CUSTOMER_ID)
+[ERROR] 2013-05-18 23:24:02,000 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-90c_5' (errno: 150)
+[ERROR] 2013-05-18 23:24:02,011 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table BALANCE_HISTORY add index account_number (account_number), add constraint account_number foreign key (account_number) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-05-18 23:24:02,012 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-90c_5' (errno: 150)
+[ERROR] 2013-05-18 23:24:02,028 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table TRANSACTIONS add index FKFE9871554FB2464A (account_ACCOUNT_ID), add constraint FKFE9871554FB2464A foreign key (account_ACCOUNT_ID) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-05-18 23:24:02,028 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-90c_5' (errno: 150)
+[INFO] 2013-05-18 23:24:02,056 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Initializing Tiles2 application context. . .
+[INFO] 2013-05-18 23:24:02,056 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Finished initializing Tiles2 application context.
+[INFO] 2013-05-18 23:24:02,058 org.apache.tiles.access.TilesAccess setContainer - Publishing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
+[INFO] 2013-05-18 23:24:10,618 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-05-18 23:24:29,612 com.bank.controllers.WelcomeController login - showing login page..
