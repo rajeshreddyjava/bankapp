@@ -18,7 +18,9 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.orm.hibernate3.HibernateTemplate;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bank.beans.DepositForm;
@@ -27,13 +29,14 @@ import com.bank.domain.BalanceHistory;
 import com.bank.domain.BalanceHistoryKey;
 import com.bank.domain.Customer;
 import com.bank.domain.Transaction;
+import com.bank.exceptions.BankDaoException;
 
 @Repository
-public class AccountsDao implements IAccountsDao {
+public class AccountsDao  implements IAccountsDao {
 
 	private HibernateTemplate hibernateTemplate;
-	@Autowired
 	
+	@Autowired
 	public HibernateTemplate getHibernateTemplate(SessionFactory sessionFactory) {
 		return this.hibernateTemplate = new HibernateTemplate(sessionFactory);
 	}
@@ -43,6 +46,7 @@ public class AccountsDao implements IAccountsDao {
 	@SuppressWarnings(value = { "unchecked","rawtypes" })
 	public Map<String, String> getAccountTypes(String userId)
 			throws DataAccessException {
+		
 
 	     Session session = hibernateTemplate.getSessionFactory().getCurrentSession();
 	     Query query = session.createQuery("select a.accountNumber, a.accountTypeCode from Accounts a where a.userId=? order by a.accountTypeCode");
@@ -78,14 +82,14 @@ public class AccountsDao implements IAccountsDao {
 			 accounts = criteria.list();
 			
 		} catch (Exception e) {
-			e.printStackTrace();
+			throw new BankDaoException("In Accounts Dao " + e.toString());
 		}
 		return accounts ;
 	}
 
 	@Override
 	@SuppressWarnings(value = { "all" })
-	@Transactional
+	@Transactional(propagation=Propagation.REQUIRES_NEW, rollbackFor = DataAccessException.class)
 	public void processDeposit(DepositForm depositForm) throws IOException {
 
 		List customerList = hibernateTemplate.find(

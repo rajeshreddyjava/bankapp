@@ -1,4 +1,4 @@
-package com.hibernate.domain;
+package com.bank.domain;
 
 import java.util.HashSet;
 import java.util.Set;

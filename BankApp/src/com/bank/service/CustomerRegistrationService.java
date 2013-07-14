@@ -9,6 +9,7 @@ import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.MessageSource;
+import org.springframework.dao.DataAccessException;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Service;
@@ -44,7 +45,7 @@ public class CustomerRegistrationService implements
 		this.registrationDao = registrationDao;
 	}
 
-	@Transactional(propagation = Propagation.REQUIRED)
+	@Transactional(propagation=Propagation.MANDATORY, rollbackFor = DataAccessException.class)
 	@Override
 	public boolean insertCustomerData(CustomerRegistrationForm form) {
 		boolean success = false;

@@ -1,13 +1,13 @@
-package com.hibernate.managers;
+package com.bank.managers;
 
 import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Session;
 
-import com.hibernate.domain.Event;
-import com.hibernate.domain.Person;
-import com.hibernate.util.HibernateUtil;
+import com.bank.domain.Event;
+import com.bank.domain.Person;
+import com.bank.util.HibernateUtil;
 
 public class EventManager {
 	public static void main(String[] args) {
