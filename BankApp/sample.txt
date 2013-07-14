@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+  <student>
+    <id country="usa">1</id>
+    <firstName>Raj</firstName>
+    <lastName>Katipally</lastName>
+    <email>rkat@gmail.com</email>
+  </student>
+  <student>
+    <id country="india">2</id>
+    <firstName>Rajesh</firstName>
+    <lastName>Reddy</lastName>
+    <email>reddy@gmail.com</email>
+  </student>
+  <student>
+    <id country="UK">1</id>
+    <firstName>Roger</firstName>
+    <lastName>Federer</lastName>
+    <email>federer@gmail.com</email>
+  </student>
+</students>
