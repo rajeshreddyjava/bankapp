@@ -1,125 +1,452 @@
-[WARN] 2013-07-10 21:32:48,053 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.BalanceHistoryKey
-[WARN] 2013-07-10 21:32:48,058 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.BalanceHistoryKey
-[WARN] 2013-07-10 21:32:48,058 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.TransferAccountsKey
-[WARN] 2013-07-10 21:32:48,059 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.TransferAccountsKey
-[ERROR] 2013-07-10 21:32:50,402 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table ACCOUNTS add index user_id (user_id), add constraint user_id foreign key (user_id) references CUSTOMER (CUSTOMER_ID)
-[ERROR] 2013-07-10 21:32:50,403 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-9c0_1' (errno: 150)
-[ERROR] 2013-07-10 21:32:50,409 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table BALANCE_HISTORY add index account_number (account_number), add constraint account_number foreign key (account_number) references ACCOUNTS (ACCOUNT_ID)
-[ERROR] 2013-07-10 21:32:50,409 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-9c0_1' (errno: 150)
-[ERROR] 2013-07-10 21:32:50,416 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table TRANSACTIONS add index FKFE9871554FB2464A (account_ACCOUNT_ID), add constraint FKFE9871554FB2464A foreign key (account_ACCOUNT_ID) references ACCOUNTS (ACCOUNT_ID)
-[ERROR] 2013-07-10 21:32:50,416 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-9c0_1' (errno: 150)
-[INFO] 2013-07-10 21:32:51,029 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Initializing Tiles2 application context. . .
-[INFO] 2013-07-10 21:32:51,031 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Finished initializing Tiles2 application context.
-[INFO] 2013-07-10 21:32:51,080 org.apache.tiles.access.TilesAccess setContainer - Publishing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
-[WARN] 2013-07-10 21:32:51,785 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.BalanceHistoryKey
-[WARN] 2013-07-10 21:32:51,785 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.BalanceHistoryKey
-[WARN] 2013-07-10 21:32:51,786 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.TransferAccountsKey
-[WARN] 2013-07-10 21:32:51,786 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.TransferAccountsKey
-[ERROR] 2013-07-10 21:32:52,037 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table ACCOUNTS add index user_id (user_id), add constraint user_id foreign key (user_id) references CUSTOMER (CUSTOMER_ID)
-[ERROR] 2013-07-10 21:32:52,038 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-9c0_2' (errno: 150)
-[ERROR] 2013-07-10 21:32:52,044 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table BALANCE_HISTORY add index account_number (account_number), add constraint account_number foreign key (account_number) references ACCOUNTS (ACCOUNT_ID)
-[ERROR] 2013-07-10 21:32:52,045 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-9c0_2' (errno: 150)
-[ERROR] 2013-07-10 21:32:52,052 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table TRANSACTIONS add index FKFE9871554FB2464A (account_ACCOUNT_ID), add constraint FKFE9871554FB2464A foreign key (account_ACCOUNT_ID) references ACCOUNTS (ACCOUNT_ID)
-[ERROR] 2013-07-10 21:32:52,057 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-9c0_2' (errno: 150)
-[INFO] 2013-07-10 21:32:52,097 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Initializing Tiles2 application context. . .
-[INFO] 2013-07-10 21:32:52,097 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Finished initializing Tiles2 application context.
-[INFO] 2013-07-10 21:32:52,098 org.apache.tiles.access.TilesAccess setContainer - Publishing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
-[INFO] 2013-07-10 21:33:03,751 com.bank.controllers.WelcomeController login - showing login page..
-[INFO] 2013-07-10 21:33:17,347 com.bank.controllers.WelcomeController printWelcome - Printing welcome message after successful login...
-[INFO] 2013-07-10 21:33:30,748 com.bank.controllers.AccountsController showAccountSummary - Starting showAccountSummary() method...
-[INFO] 2013-07-10 21:33:30,769 com.bank.controllers.AccountsController showAccountSummary - returning model and view in showAccountSummary() method..
-[INFO] 2013-07-10 21:33:33,239 com.bank.controllers.AccountsController showTransactions - Show transactions started...
-[INFO] 2013-07-10 21:34:17,284 com.bank.controllers.WelcomeController login - showing login page..
-[INFO] 2013-07-10 22:01:37,982 org.apache.tiles.access.TilesAccess setContainer - Removing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
-[INFO] 2013-07-10 22:01:38,094 org.apache.tiles.access.TilesAccess setContainer - Removing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
-[WARN] 2013-07-10 22:01:41,852 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.BalanceHistoryKey
-[WARN] 2013-07-10 22:01:41,854 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.BalanceHistoryKey
-[WARN] 2013-07-10 22:01:41,855 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.TransferAccountsKey
-[WARN] 2013-07-10 22:01:41,855 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.TransferAccountsKey
-[ERROR] 2013-07-10 22:01:42,630 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table ACCOUNTS add index user_id (user_id), add constraint user_id foreign key (user_id) references CUSTOMER (CUSTOMER_ID)
-[ERROR] 2013-07-10 22:01:42,631 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-9c0_3' (errno: 150)
-[ERROR] 2013-07-10 22:01:42,656 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table BALANCE_HISTORY add index account_number (account_number), add constraint account_number foreign key (account_number) references ACCOUNTS (ACCOUNT_ID)
-[ERROR] 2013-07-10 22:01:42,656 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-9c0_3' (errno: 150)
-[ERROR] 2013-07-10 22:01:42,681 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table TRANSACTIONS add index FKFE9871554FB2464A (account_ACCOUNT_ID), add constraint FKFE9871554FB2464A foreign key (account_ACCOUNT_ID) references ACCOUNTS (ACCOUNT_ID)
-[ERROR] 2013-07-10 22:01:42,681 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-9c0_3' (errno: 150)
-[ERROR] 2013-07-10 22:01:42,898 org.springframework.web.context.ContextLoader initWebApplicationContext - Context initialization failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transfersController': Injection of autowired dependencies failed; nested exception is java.lang.Error: Unresolved compilation problem: 
-	Syntax error on token "=", Expression expected after this token
-
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:285)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1074)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:291)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:288)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:190)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:580)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:895)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:425)
-	at org.springframework.web.context.ContextLoader.createWebApplicationContext(ContextLoader.java:276)
-	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:197)
-	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:47)
-	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4790)
-	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5284)
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
-	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3919)
-	at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:426)
-	at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1364)
-	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1566)
-	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1576)
-	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1576)
-	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1555)
-	at java.lang.Thread.run(Thread.java:722)
-Caused by: java.lang.Error: Unresolved compilation problem: 
-	Syntax error on token "=", Expression expected after this token
-
-	at com.bank.controllers.TransfersController.setAccountsService(TransfersController.java:26)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:582)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:84)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:282)
-	... 24 more
-[WARN] 2013-07-10 22:37:46,951 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.BalanceHistoryKey
-[WARN] 2013-07-10 22:37:46,993 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.BalanceHistoryKey
-[WARN] 2013-07-10 22:37:46,996 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.TransferAccountsKey
-[WARN] 2013-07-10 22:37:46,998 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.TransferAccountsKey
-[ERROR] 2013-07-10 22:37:47,776 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table ACCOUNTS add index user_id (user_id), add constraint user_id foreign key (user_id) references CUSTOMER (CUSTOMER_ID)
-[ERROR] 2013-07-10 22:37:47,779 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-9c0_4' (errno: 150)
-[ERROR] 2013-07-10 22:37:47,801 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table BALANCE_HISTORY add index account_number (account_number), add constraint account_number foreign key (account_number) references ACCOUNTS (ACCOUNT_ID)
-[ERROR] 2013-07-10 22:37:47,802 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-9c0_4' (errno: 150)
-[ERROR] 2013-07-10 22:37:47,831 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table TRANSACTIONS add index FKFE9871554FB2464A (account_ACCOUNT_ID), add constraint FKFE9871554FB2464A foreign key (account_ACCOUNT_ID) references ACCOUNTS (ACCOUNT_ID)
-[ERROR] 2013-07-10 22:37:47,833 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-9c0_4' (errno: 150)
-[INFO] 2013-07-10 22:37:48,390 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Initializing Tiles2 application context. . .
-[INFO] 2013-07-10 22:37:48,392 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Finished initializing Tiles2 application context.
-[INFO] 2013-07-10 22:37:48,464 org.apache.tiles.access.TilesAccess setContainer - Publishing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
-[WARN] 2013-07-10 22:37:49,185 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.BalanceHistoryKey
-[WARN] 2013-07-10 22:37:49,186 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.BalanceHistoryKey
-[WARN] 2013-07-10 22:37:49,192 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.TransferAccountsKey
-[WARN] 2013-07-10 22:37:49,193 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.TransferAccountsKey
-[ERROR] 2013-07-10 22:37:49,414 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table ACCOUNTS add index user_id (user_id), add constraint user_id foreign key (user_id) references CUSTOMER (CUSTOMER_ID)
-[ERROR] 2013-07-10 22:37:49,415 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-9c0_5' (errno: 150)
-[ERROR] 2013-07-10 22:37:49,432 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table BALANCE_HISTORY add index account_number (account_number), add constraint account_number foreign key (account_number) references ACCOUNTS (ACCOUNT_ID)
-[ERROR] 2013-07-10 22:37:49,432 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-9c0_5' (errno: 150)
-[ERROR] 2013-07-10 22:37:49,444 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table TRANSACTIONS add index FKFE9871554FB2464A (account_ACCOUNT_ID), add constraint FKFE9871554FB2464A foreign key (account_ACCOUNT_ID) references ACCOUNTS (ACCOUNT_ID)
-[ERROR] 2013-07-10 22:37:49,444 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-9c0_5' (errno: 150)
-[INFO] 2013-07-10 22:37:49,495 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Initializing Tiles2 application context. . .
-[INFO] 2013-07-10 22:37:49,495 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Finished initializing Tiles2 application context.
-[INFO] 2013-07-10 22:37:49,496 org.apache.tiles.access.TilesAccess setContainer - Publishing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
-[INFO] 2013-07-10 22:37:56,034 com.bank.controllers.WelcomeController login - showing login page..
-[INFO] 2013-07-10 22:38:11,224 com.bank.controllers.WelcomeController login - showing login page..
-[INFO] 2013-07-10 22:39:22,581 com.bank.controllers.WelcomeController printWelcome - Printing welcome message after successful login...
-[INFO] 2013-07-10 22:39:28,402 com.bank.controllers.AccountsController showAccountSummary - Starting showAccountSummary() method...
-[INFO] 2013-07-10 22:39:28,467 com.bank.controllers.AccountsController showAccountSummary - returning model and view in showAccountSummary() method..
-[INFO] 2013-07-10 22:39:31,505 com.bank.controllers.AccountsController showTransactions - Show transactions started...
-[INFO] 2013-07-10 22:39:41,468 com.bank.controllers.AccountsController showAccountSummary - Starting showAccountSummary() method...
-[INFO] 2013-07-10 22:39:41,471 com.bank.controllers.AccountsController showAccountSummary - returning model and view in showAccountSummary() method..
-[INFO] 2013-07-10 22:40:32,225 com.bank.controllers.AccountsController showAccountSummary - Starting showAccountSummary() method...
-[INFO] 2013-07-10 22:40:32,229 com.bank.controllers.AccountsController showAccountSummary - returning model and view in showAccountSummary() method..
-[INFO] 2013-07-10 22:40:33,777 com.bank.controllers.AccountsController showTransactions - Show transactions started...
-[INFO] 2013-07-10 22:40:47,761 com.bank.controllers.WelcomeController login - showing login page..
-[INFO] 2013-07-10 22:40:49,091 com.bank.controllers.WelcomeController login - showing login page..
-[INFO] 2013-07-10 22:40:51,777 com.bank.controllers.WelcomeController login - showing login page..
+[WARN] 2013-07-16 18:36:03,322 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.BalanceHistoryKey
+[WARN] 2013-07-16 18:36:03,326 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.BalanceHistoryKey
+[WARN] 2013-07-16 18:36:03,327 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.TransferAccountsKey
+[WARN] 2013-07-16 18:36:03,331 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.TransferAccountsKey
+[ERROR] 2013-07-16 18:36:04,762 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table ACCOUNTS add index user_id (user_id), add constraint user_id foreign key (user_id) references CUSTOMER (CUSTOMER_ID)
+[ERROR] 2013-07-16 18:36:04,762 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-938_1' (errno: 150)
+[ERROR] 2013-07-16 18:36:04,769 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table BALANCE_HISTORY add index account_number (account_number), add constraint account_number foreign key (account_number) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-07-16 18:36:04,770 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-938_1' (errno: 150)
+[ERROR] 2013-07-16 18:36:04,787 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table TRANSACTIONS add index FKFE9871554FB2464A (account_ACCOUNT_ID), add constraint FKFE9871554FB2464A foreign key (account_ACCOUNT_ID) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-07-16 18:36:04,788 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-938_1' (errno: 150)
+[INFO] 2013-07-16 18:36:05,287 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Initializing Tiles2 application context. . .
+[INFO] 2013-07-16 18:36:05,289 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Finished initializing Tiles2 application context.
+[INFO] 2013-07-16 18:36:05,336 org.apache.tiles.access.TilesAccess setContainer - Publishing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
+[WARN] 2013-07-16 18:36:06,035 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.BalanceHistoryKey
+[WARN] 2013-07-16 18:36:06,035 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.BalanceHistoryKey
+[WARN] 2013-07-16 18:36:06,036 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.TransferAccountsKey
+[WARN] 2013-07-16 18:36:06,037 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.TransferAccountsKey
+[ERROR] 2013-07-16 18:36:06,315 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table ACCOUNTS add index user_id (user_id), add constraint user_id foreign key (user_id) references CUSTOMER (CUSTOMER_ID)
+[ERROR] 2013-07-16 18:36:06,316 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-938_2' (errno: 150)
+[ERROR] 2013-07-16 18:36:06,323 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table BALANCE_HISTORY add index account_number (account_number), add constraint account_number foreign key (account_number) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-07-16 18:36:06,323 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-938_2' (errno: 150)
+[ERROR] 2013-07-16 18:36:06,329 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table TRANSACTIONS add index FKFE9871554FB2464A (account_ACCOUNT_ID), add constraint FKFE9871554FB2464A foreign key (account_ACCOUNT_ID) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-07-16 18:36:06,329 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-938_2' (errno: 150)
+[INFO] 2013-07-16 18:36:06,371 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Initializing Tiles2 application context. . .
+[INFO] 2013-07-16 18:36:06,371 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Finished initializing Tiles2 application context.
+[INFO] 2013-07-16 18:36:06,372 org.apache.tiles.access.TilesAccess setContainer - Publishing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
+[INFO] 2013-07-16 18:36:13,601 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 18:36:20,621 com.bank.controllers.WelcomeController printWelcome - Printing welcome message after successful login...
+[INFO] 2013-07-16 18:36:25,026 com.bank.controllers.TransfersController showTransfers - In Transfers Controller - showTransfers
+[INFO] 2013-07-16 18:36:26,248 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 18:39:27,089 org.apache.tiles.access.TilesAccess setContainer - Removing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
+[INFO] 2013-07-16 18:39:27,164 org.apache.tiles.access.TilesAccess setContainer - Removing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
+[WARN] 2013-07-16 18:39:32,431 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.BalanceHistoryKey
+[WARN] 2013-07-16 18:39:32,433 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.BalanceHistoryKey
+[WARN] 2013-07-16 18:39:32,434 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.TransferAccountsKey
+[WARN] 2013-07-16 18:39:32,434 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.TransferAccountsKey
+[ERROR] 2013-07-16 18:39:33,185 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table ACCOUNTS add index user_id (user_id), add constraint user_id foreign key (user_id) references CUSTOMER (CUSTOMER_ID)
+[ERROR] 2013-07-16 18:39:33,185 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-938_3' (errno: 150)
+[ERROR] 2013-07-16 18:39:33,199 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table BALANCE_HISTORY add index account_number (account_number), add constraint account_number foreign key (account_number) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-07-16 18:39:33,200 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-938_3' (errno: 150)
+[ERROR] 2013-07-16 18:39:33,210 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table TRANSACTIONS add index FKFE9871554FB2464A (account_ACCOUNT_ID), add constraint FKFE9871554FB2464A foreign key (account_ACCOUNT_ID) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-07-16 18:39:33,211 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-938_3' (errno: 150)
+[INFO] 2013-07-16 18:39:33,611 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Initializing Tiles2 application context. . .
+[INFO] 2013-07-16 18:39:33,613 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Finished initializing Tiles2 application context.
+[INFO] 2013-07-16 18:39:33,660 org.apache.tiles.access.TilesAccess setContainer - Publishing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
+[WARN] 2013-07-16 18:39:34,400 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.BalanceHistoryKey
+[WARN] 2013-07-16 18:39:34,401 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.BalanceHistoryKey
+[WARN] 2013-07-16 18:39:34,401 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.TransferAccountsKey
+[WARN] 2013-07-16 18:39:34,402 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.TransferAccountsKey
+[ERROR] 2013-07-16 18:39:34,577 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table ACCOUNTS add index user_id (user_id), add constraint user_id foreign key (user_id) references CUSTOMER (CUSTOMER_ID)
+[ERROR] 2013-07-16 18:39:34,577 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-938_4' (errno: 150)
+[ERROR] 2013-07-16 18:39:34,637 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table BALANCE_HISTORY add index account_number (account_number), add constraint account_number foreign key (account_number) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-07-16 18:39:34,639 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-938_4' (errno: 150)
+[ERROR] 2013-07-16 18:39:34,667 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table TRANSACTIONS add index FKFE9871554FB2464A (account_ACCOUNT_ID), add constraint FKFE9871554FB2464A foreign key (account_ACCOUNT_ID) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-07-16 18:39:34,669 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-938_4' (errno: 150)
+[INFO] 2013-07-16 18:39:34,729 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Initializing Tiles2 application context. . .
+[INFO] 2013-07-16 18:39:34,729 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Finished initializing Tiles2 application context.
+[INFO] 2013-07-16 18:39:34,730 org.apache.tiles.access.TilesAccess setContainer - Publishing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
+[INFO] 2013-07-16 18:39:38,121 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 18:40:21,858 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 18:40:36,365 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 18:41:05,924 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 18:41:26,802 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 18:41:40,123 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 18:41:42,448 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 18:42:00,852 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 18:42:06,257 com.bank.controllers.WelcomeController printWelcome - Printing welcome message after successful login...
+[INFO] 2013-07-16 18:42:08,482 com.bank.controllers.TransfersController showTransfers - In Transfers Controller - showTransfers
+[INFO] 2013-07-16 18:42:09,412 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:03:16,581 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 19:03:23,007 com.bank.controllers.WelcomeController printWelcome - Printing welcome message after successful login...
+[INFO] 2013-07-16 19:03:27,768 com.bank.controllers.TransfersController showTransfers - In Transfers Controller - showTransfers
+[INFO] 2013-07-16 19:03:29,272 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:04:19,195 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:04:54,219 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:04:58,285 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:05:13,246 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:05:33,855 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:05:34,155 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:05:34,239 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:05:34,536 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:10:52,272 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:10:52,488 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:10:52,703 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:10:52,803 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:10:53,001 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:10:53,141 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:10:53,431 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:10:53,735 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:12:32,785 org.apache.tiles.access.TilesAccess setContainer - Removing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
+[INFO] 2013-07-16 19:12:32,802 org.apache.tiles.access.TilesAccess setContainer - Removing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
+[WARN] 2013-07-16 19:12:38,981 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.BalanceHistoryKey
+[WARN] 2013-07-16 19:12:38,983 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.BalanceHistoryKey
+[WARN] 2013-07-16 19:12:38,984 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.TransferAccountsKey
+[WARN] 2013-07-16 19:12:38,985 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.TransferAccountsKey
+[ERROR] 2013-07-16 19:12:39,630 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table ACCOUNTS add index user_id (user_id), add constraint user_id foreign key (user_id) references CUSTOMER (CUSTOMER_ID)
+[ERROR] 2013-07-16 19:12:39,631 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-938_5' (errno: 150)
+[ERROR] 2013-07-16 19:12:39,637 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table BALANCE_HISTORY add index account_number (account_number), add constraint account_number foreign key (account_number) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-07-16 19:12:39,637 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-938_5' (errno: 150)
+[ERROR] 2013-07-16 19:12:39,643 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table TRANSACTIONS add index FKFE9871554FB2464A (account_ACCOUNT_ID), add constraint FKFE9871554FB2464A foreign key (account_ACCOUNT_ID) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-07-16 19:12:39,643 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-938_5' (errno: 150)
+[INFO] 2013-07-16 19:12:40,029 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Initializing Tiles2 application context. . .
+[INFO] 2013-07-16 19:12:40,031 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Finished initializing Tiles2 application context.
+[INFO] 2013-07-16 19:12:40,077 org.apache.tiles.access.TilesAccess setContainer - Publishing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
+[WARN] 2013-07-16 19:12:40,800 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.BalanceHistoryKey
+[WARN] 2013-07-16 19:12:40,801 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.BalanceHistoryKey
+[WARN] 2013-07-16 19:12:40,801 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.TransferAccountsKey
+[WARN] 2013-07-16 19:12:40,802 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.TransferAccountsKey
+[ERROR] 2013-07-16 19:12:41,082 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table ACCOUNTS add index user_id (user_id), add constraint user_id foreign key (user_id) references CUSTOMER (CUSTOMER_ID)
+[ERROR] 2013-07-16 19:12:41,082 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-938_6' (errno: 150)
+[ERROR] 2013-07-16 19:12:41,088 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table BALANCE_HISTORY add index account_number (account_number), add constraint account_number foreign key (account_number) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-07-16 19:12:41,088 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-938_6' (errno: 150)
+[ERROR] 2013-07-16 19:12:41,095 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table TRANSACTIONS add index FKFE9871554FB2464A (account_ACCOUNT_ID), add constraint FKFE9871554FB2464A foreign key (account_ACCOUNT_ID) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-07-16 19:12:41,099 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-938_6' (errno: 150)
+[INFO] 2013-07-16 19:12:41,157 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Initializing Tiles2 application context. . .
+[INFO] 2013-07-16 19:12:41,158 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Finished initializing Tiles2 application context.
+[INFO] 2013-07-16 19:12:41,159 org.apache.tiles.access.TilesAccess setContainer - Publishing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
+[INFO] 2013-07-16 19:13:09,023 com.bank.controllers.WelcomeController printWelcome - Printing welcome message after successful login...
+[INFO] 2013-07-16 19:13:12,480 com.bank.controllers.TransfersController showTransfers - In Transfers Controller - showTransfers
+[INFO] 2013-07-16 19:13:15,016 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:14:31,935 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:15:36,642 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:15:36,895 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:15:37,027 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:15:37,315 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:15:37,543 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:15:37,638 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:16:51,267 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:16:51,605 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:16:51,927 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:16:52,224 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:16:52,325 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:16:52,607 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:16:52,681 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:16:52,985 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:16:53,267 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:16:53,323 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:16:53,634 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:17:30,922 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:17:31,269 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:17:31,342 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:17:31,585 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:17:31,692 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:17:32,002 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:18:25,011 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:18:25,338 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:18:25,442 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:18:25,640 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:18:25,748 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:18:26,046 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:18:26,246 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:18:26,357 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:19:08,511 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:19:08,751 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:19:09,046 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:19:09,308 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:19:09,387 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:19:09,678 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:19:43,902 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:19:44,156 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:19:44,429 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:19:44,482 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:19:44,688 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:19:44,841 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:20:16,640 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:21:30,021 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:21:30,194 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:21:30,363 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:21:30,536 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:21:30,717 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:21:30,924 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:21:31,135 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:21:31,275 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:21:31,473 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:21:31,580 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:22:34,480 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 19:22:39,729 com.bank.controllers.WelcomeController printWelcome - Printing welcome message after successful login...
+[INFO] 2013-07-16 19:22:41,499 com.bank.controllers.TransfersController showTransfers - In Transfers Controller - showTransfers
+[INFO] 2013-07-16 19:22:42,901 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:23:07,303 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:23:07,680 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:23:07,761 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:23:08,061 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:23:08,123 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:23:08,421 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:23:08,473 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:25:52,693 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:25:52,891 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:25:53,097 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:25:53,229 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:25:53,397 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:25:53,543 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:25:53,699 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:25:53,856 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:26:18,668 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:26:18,849 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:26:19,023 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:26:19,201 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:26:31,182 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:26:31,635 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:26:31,944 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:26:32,071 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:27:14,866 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:27:15,042 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:27:15,211 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:27:15,378 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:27:15,524 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:27:15,694 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:27:15,843 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:27:23,861 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:27:24,214 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:27:24,224 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:27:24,507 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:27:24,569 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:27:24,872 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:27:25,165 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:28:15,647 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:28:15,981 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:28:16,235 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:28:16,391 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:28:16,564 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:30:38,947 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:30:39,193 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:30:39,335 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:30:39,650 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:30:39,953 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:33:51,742 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:33:52,055 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:33:52,121 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:33:52,454 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:33:52,759 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:35:55,807 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:35:56,855 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:35:57,233 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:35:57,494 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:36:46,661 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:36:47,148 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:36:47,242 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:36:47,570 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:36:47,861 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:37:10,376 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:37:10,703 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:37:10,715 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:37:11,022 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:37:11,105 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:37:11,411 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:37:11,745 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:37:12,060 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:37:45,012 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:37:45,252 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:37:45,447 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:37:45,522 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:37:45,814 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:37:45,881 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:37:46,115 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:37:46,206 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:37:46,416 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:37:46,602 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:42:02,192 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:44:26,154 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:44:26,547 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:44:26,975 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:44:27,098 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:44:27,326 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:44:27,658 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:44:37,047 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:44:37,399 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:44:37,467 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:44:37,786 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:44:37,802 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:44:38,126 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:44:38,221 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:44:38,454 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:44:38,563 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:44:38,793 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:44:38,909 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:45:19,043 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:47:18,985 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:47:19,311 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:47:19,389 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:47:19,675 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:47:19,766 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:49:44,265 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:49:44,541 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:49:44,640 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:49:44,932 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:49:44,945 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:49:45,238 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 19:49:45,288 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:21:08,962 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:09,152 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:09,403 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:09,482 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:09,685 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:09,878 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:10,071 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:10,166 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:10,464 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:10,524 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:10,874 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:11,145 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:11,224 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:11,488 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:11,665 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:11,839 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:12,011 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:12,134 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:12,394 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:12,468 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:12,742 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:12,931 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:13,009 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:13,298 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:13,378 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:13,682 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:13,721 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:13,966 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:14,085 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:14,372 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:14,469 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:14,683 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:14,871 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-07-16 20:21:21,361 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:24:45,858 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:24:46,191 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:24:46,283 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:24:46,623 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:24:46,693 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:24:46,998 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:24:47,060 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:24:47,282 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:27:27,252 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:27:27,580 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:27:27,874 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:29:21,484 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:29:21,820 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:29:21,854 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:29:22,161 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:29:22,190 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:29:22,476 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:29:22,563 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:29:22,833 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:29:22,914 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:29:23,193 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:29:23,275 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:29:23,548 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:29:23,633 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:29:23,960 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:29:23,969 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:29:24,269 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:29:24,315 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:31:30,320 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:31:30,558 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:31:30,682 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:31:30,994 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:31:31,045 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:31:31,275 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:31:31,386 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:31:31,697 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:31:32,010 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:31:32,062 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:31:32,363 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:31:32,418 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:31:32,791 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:31:32,930 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:31:33,261 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:31:33,334 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:31:33,634 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:31:33,742 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:31:33,950 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:31:34,137 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:31:34,270 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:31:34,730 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:34:03,967 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:34:04,258 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:34:04,462 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:34:04,617 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:34:04,950 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:34:05,243 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:34:05,316 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:34:05,615 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:34:05,630 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:34:05,943 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:34:06,008 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:34:06,223 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:34:37,762 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:34:38,165 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:34:38,454 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:34:38,521 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:34:38,830 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:34:39,126 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:34:39,242 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:34:39,583 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:34:39,896 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:34:39,974 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:35:54,218 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:35:54,571 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:35:54,661 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:35:54,988 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:35:55,303 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:35:55,643 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:35:56,017 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:35:56,203 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:35:56,401 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:35:56,704 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:35:56,823 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:38:50,396 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:38:50,745 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:38:50,862 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:38:51,181 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:53:10,357 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:53:10,598 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:53:10,867 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:53:10,964 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:53:11,267 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:53:11,343 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:53:11,680 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:53:11,984 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:53:12,049 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:53:12,385 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:53:12,458 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:53:12,795 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:53:12,850 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:53:13,203 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:53:13,299 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:53:13,582 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:53:13,880 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:53:14,198 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 20:59:45,794 com.bank.controllers.WelcomeController printWelcome - Printing welcome message after successful login...
+[INFO] 2013-07-16 20:59:48,160 com.bank.controllers.WelcomeController printWelcome - Printing welcome message after successful login...
+[INFO] 2013-07-16 20:59:48,412 com.bank.controllers.WelcomeController printWelcome - Printing welcome message after successful login...
+[INFO] 2013-07-16 20:59:48,692 com.bank.controllers.WelcomeController printWelcome - Printing welcome message after successful login...
+[INFO] 2013-07-16 20:59:49,889 com.bank.controllers.WelcomeController printWelcome - Printing welcome message after successful login...
+[INFO] 2013-07-16 20:59:50,705 com.bank.controllers.WelcomeController printWelcome - Printing welcome message after successful login...
+[INFO] 2013-07-16 20:59:50,958 com.bank.controllers.WelcomeController printWelcome - Printing welcome message after successful login...
+[INFO] 2013-07-16 20:59:51,214 com.bank.controllers.WelcomeController printWelcome - Printing welcome message after successful login...
+[INFO] 2013-07-16 20:59:51,259 com.bank.controllers.WelcomeController printWelcome - Printing welcome message after successful login...
+[INFO] 2013-07-16 20:59:51,518 com.bank.controllers.WelcomeController printWelcome - Printing welcome message after successful login...
+[INFO] 2013-07-16 20:59:51,616 com.bank.controllers.WelcomeController printWelcome - Printing welcome message after successful login...
+[INFO] 2013-07-16 20:59:51,885 com.bank.controllers.WelcomeController printWelcome - Printing welcome message after successful login...
+[INFO] 2013-07-16 20:59:51,986 com.bank.controllers.WelcomeController printWelcome - Printing welcome message after successful login...
+[INFO] 2013-07-16 20:59:52,258 com.bank.controllers.WelcomeController printWelcome - Printing welcome message after successful login...
+[INFO] 2013-07-16 20:59:52,352 com.bank.controllers.WelcomeController printWelcome - Printing welcome message after successful login...
+[INFO] 2013-07-16 20:59:52,622 com.bank.controllers.WelcomeController printWelcome - Printing welcome message after successful login...
+[INFO] 2013-07-16 20:59:53,815 com.bank.controllers.TransfersController showTransfers - In Transfers Controller - showTransfers
+[INFO] 2013-07-16 20:59:56,335 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 21:00:34,206 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 21:00:34,557 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 21:00:35,275 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 21:00:35,618 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 21:00:35,689 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver
+[INFO] 2013-07-16 21:00:35,982 com.bank.controllers.TransfersController showAddReceiver - In Transfers Controller - showAddReceiver

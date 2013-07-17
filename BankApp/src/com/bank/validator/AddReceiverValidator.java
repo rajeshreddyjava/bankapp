@@ -1,6 +1,7 @@
 package com.bank.validator;
 
 import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 import com.bank.beans.AddReceiverForm;
@@ -18,5 +19,7 @@ public class AddReceiverValidator implements Validator{
 		AddReceiverForm addReceiverForm = (AddReceiverForm)object;
 		
 	}
+	
+	
 
 }

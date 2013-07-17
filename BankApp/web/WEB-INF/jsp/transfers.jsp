@@ -18,7 +18,7 @@
 				<option>Checking</option>
 				<option>Savings</option>
 			</select>
-			</td><td><a href="/addReceiver.do" >Add Receiver</a></td>
+			</td><td><a href="user/transfers/addReceiver.do" >Add Receiver</a></td>
 		</tr>
 		</table>
 	</form:form>

@@ -18,7 +18,10 @@
 	</div>
 	<script src="scripts/jquery-1.9.1.min.js"></script>
 <script src="scripts/bank_scripts.js"></script>
+<script src="scripts/addReceiver_validation.js"></script>
 <script type="text/javascript" src="scripts/jquery-ui.js"></script>
+
+
  
 
 </body>

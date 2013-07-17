@@ -22,7 +22,7 @@ Welcome <sec:authentication property="principal.username"></sec:authentication>&
 </sec:authorize>
 <li><a class="link" href="user/accounts.do">Accounts</a></li>
 <li><a class="link" href="user/deposits.do">Deposits</a></li>
-<li><a class="link" href="user/transfers.do">Transfers</a></li>
+<li><a class="link" href="user/transfers/transfers.do">Transfers</a></li>
 <li><a class="link" href="user/profile.do">Profile</a></li>
 <li><a class="link" href="user/customer_serivce.do">Customer Services</a></li>
 
