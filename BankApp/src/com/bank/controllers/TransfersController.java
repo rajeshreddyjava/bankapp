@@ -13,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/user/transfers")
 public class TransfersController {
 	private static final String TRANSFERS= "transfers";
-	private static final String ADD_RECEIVER= "add_receiver";
 	private static final Logger log = Logger.getLogger(TransfersController.class);
 		
 		
@@ -26,13 +25,5 @@ public class TransfersController {
 	
 
 	}
-		@RequestMapping(method=RequestMethod.GET, value="/addReceiver.do")
-		public ModelAndView showAddReceiver(ModelMap model){
-			ModelAndView mv = new ModelAndView();
-			log.info("In Transfers Controller - showAddReceiver");
-			mv.setViewName(ADD_RECEIVER);
-			return mv;
-	
-
-	}
+		
 }

@@ -1,12 +1,15 @@
 package com.bank.domain;
 
+import java.util.Date;
+
 import javax.persistence.Column;
-import javax.persistence.Embeddable;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -34,6 +37,20 @@ public class Address {
 	
 	@Column(name="OTHER_ADDRESS_DETAILS")
 	private String otherAddressDetails;
+	
+	@Column(name="ADD_TS")
+	private Date addTimestamp;
+	@Column(name="ADD_USR")
+	private String addUser;
+	@Column(name="UPDT_TS")
+	private Date updateTimestamp;
+	@Column(name="UPDT_USR")
+	private String updateUser;
+	
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "USER_ID", nullable = false)
+	private Customer customer;
 	
 	public int getId() {
 		return id;
@@ -82,6 +99,42 @@ public class Address {
 	}
 	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
+	}
+	/*public Customer getCustomer() {
+		return customer;
+	}
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}*/
+	public Date getAddTimestamp() {
+		return addTimestamp;
+	}
+	public void setAddTimestamp(Date addTimestamp) {
+		this.addTimestamp = addTimestamp;
+	}
+	public String getAddUser() {
+		return addUser;
+	}
+	public void setAddUser(String addUser) {
+		this.addUser = addUser;
+	}
+	public Date getUpdateTimestamp() {
+		return updateTimestamp;
+	}
+	public void setUpdateTimestamp(Date updateTimestamp) {
+		this.updateTimestamp = updateTimestamp;
+	}
+	public String getUpdateUser() {
+		return updateUser;
+	}
+	public void setUpdateUser(String updateUser) {
+		this.updateUser = updateUser;
+	}
+	public Customer getCustomer() {
+		return customer;
+	}
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
 }

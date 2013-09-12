@@ -1,12 +1,11 @@
 package com.bank.validator;
 
 import org.springframework.validation.Errors;
-import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 import com.bank.beans.AddReceiverForm;
 
-public class AddReceiverValidator implements Validator{
+public class BankValidator implements Validator{
 
 	@Override
 	public boolean supports(Class<?> arg0) {
@@ -19,7 +18,10 @@ public class AddReceiverValidator implements Validator{
 		AddReceiverForm addReceiverForm = (AddReceiverForm)object;
 		
 	}
-	
+	public String validateReceiverInfo(AddReceiverForm addReceiverForm){
+		
+		return "";
+	}
 	
 
 }

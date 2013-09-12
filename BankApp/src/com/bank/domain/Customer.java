@@ -6,8 +6,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -15,17 +15,15 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.ForeignKey;
 import org.springframework.stereotype.Repository;
-
-import com.bank.domain.Address;
 
 @Repository
 @Entity
 @Table(name = "CUSTOMER")
 public class Customer {
 	@Column(name = "CUSTOMER_ID")
-	@Id 
+	
+	
 	@GeneratedValue
 	private int ID;
 	@Column(name = "SSN")
@@ -38,6 +36,7 @@ public class Customer {
 	private String lastName;
 	@Column(name = "DATE_OF_BIRTH")
 	private Date dateOfBirth;
+	@Id
 	@Column(name = "USER_ID")
 	private String userId;
 	@Column(name = "CUSTOMER_HOME_PHONE")
@@ -72,13 +71,11 @@ public class Customer {
 	@Column(name="UPDT_USR")
 	private String updateUser;
 	
-	@OneToMany
-	@JoinTable(name = "CUSTOMER_ADDRESSES", joinColumns = { @JoinColumn(name = "CUSTOMER_ID") }, 
-				inverseJoinColumns = { @JoinColumn(name = "ADDRESS_ID") })
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
 	private Collection<Address> address = new ArrayList<Address>();
+	
 	@OneToMany(mappedBy = "customer")
 	@JoinColumn(name = "user_id")
-	@ForeignKey(name = "user_id")
 	private Collection<Accounts> accounts = new ArrayList<Accounts>();
 	public int getID() {
 		return ID;

@@ -1,7 +1,6 @@
 package com.bank.dao;
 
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,6 +8,7 @@ import java.util.List;
 import java.util.Locale;
 
 import org.hibernate.HibernateException;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate3.HibernateTemplate;
@@ -27,14 +27,22 @@ public class CustomerRegistrationDao implements ICustomerRegistrationDao {
 
 	private HibernateTemplate hibernateTemplate;
 
-	@Autowired
+	/*@Autowired
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.hibernateTemplate = new HibernateTemplate(sessionFactory);
 	}
+	*/
 
+	private SessionFactory sessionFactory;
+	@Autowired
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
 	@Override
 	public void insertRegistrationDetails(CustomerRegistrationForm registerForm) {
 		
+		Session session = sessionFactory.getCurrentSession();
+		session.beginTransaction();
 		try{
 		DateFormat df = new SimpleDateFormat("MMMM d, yyyy", Locale.ENGLISH);
 	      
@@ -72,6 +80,11 @@ public class CustomerRegistrationDao implements ICustomerRegistrationDao {
 		address.setZipCode(registerForm.getAddress().getZipCode());
 		address.setCountry("USA");
 		address.setOtherAddressDetails("Address Added");
+		address.setAddUser("Raj");
+		address.setUpdateTimestamp(new Date());
+		address.setUpdateUser("Raj");
+		address.setCustomer(customer);
+		customer.getAddress().add(address);
 		
 		Accounts account =  new Accounts();
 		account.setAccountTypeCode(registerForm.getAccountType()[0]);
@@ -113,14 +126,21 @@ public class CustomerRegistrationDao implements ICustomerRegistrationDao {
 		customer.getAccounts().add(account1);
 		}
 		
-		hibernateTemplate.saveOrUpdate(customer);
-		hibernateTemplate.saveOrUpdate(address);
-		hibernateTemplate.saveOrUpdate(account);
+		session.saveOrUpdate(customer);
+		session.saveOrUpdate(address);
+		session.saveOrUpdate(account);
 		if(account1 != null)
-			hibernateTemplate.saveOrUpdate(account1);
+			session.saveOrUpdate(account1);
+		
+		session.getTransaction().commit();
 		}
+		
 		catch(Exception p){
+			session.getTransaction().rollback();
 			p.printStackTrace();
+		}
+		finally{
+			session.close();
 		}
 
 	}

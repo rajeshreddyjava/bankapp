@@ -15,5 +15,6 @@ public interface IAccountsDao {
 	public void processDeposit(DepositForm depositForm) throws IOException;
 	public List<Accounts> getAccountSummary(String userId);
 	public List<Transaction> getTransactions(String accountType, String accountNumber, String userId);
+	public List<Accounts> getAccounts(String userId);
 
 }

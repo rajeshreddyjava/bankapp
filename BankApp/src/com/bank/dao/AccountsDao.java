@@ -40,6 +40,11 @@ public class AccountsDao  implements IAccountsDao {
 	public HibernateTemplate getHibernateTemplate(SessionFactory sessionFactory) {
 		return this.hibernateTemplate = new HibernateTemplate(sessionFactory);
 	}
+	private SessionFactory sessionFactory;
+	@Autowired
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
 
 	@Override
 	@Transactional
@@ -60,6 +65,22 @@ public class AccountsDao  implements IAccountsDao {
 					
 		}
 		return accountMap;
+	}
+	
+	@Transactional
+	public List<Accounts> getAccounts(String userId){
+		Session session = null;
+		List accountList = null;
+		try{
+			session = sessionFactory.getCurrentSession();
+			Query query = session.createQuery("from Accounts a where userId = ?");
+			query.setParameter(0, userId);
+			 accountList = query.list();
+		}
+		catch(DataAccessException de){
+			throw (new BankDaoException("In getAccounts()"));
+		}
+		return accountList;
 	}
 
 	@SuppressWarnings(value = { "unused","unchecked" })

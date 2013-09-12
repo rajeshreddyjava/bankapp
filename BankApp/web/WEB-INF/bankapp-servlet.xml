@@ -15,7 +15,7 @@
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 	<!-- To register beans that are annotated with stereotype annotations -->
 	<context:component-scan base-package="com.bank" />
-	<mvc:annotation-driven />
+	
 	<bean class="com.bank.validator.CustomerRegistrationValidator"></bean>
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
@@ -24,7 +24,7 @@
 			</value>
 		</property>
 	</bean>
-	<bean id="tilesConfigurer"
+	<!--  <bean id="tilesConfigurer"
 		class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
 		<property name="definitions">
 			<list>
@@ -33,6 +33,7 @@
 			</list>
 		</property>
 	</bean>
+	--> 
 	<!-- <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
 		<property name="prefix"> <value>/WEB-INF/jsp/</value> </property> <property 
 		name="suffix"> <value>.jsp</value> </property> </bean> -->
@@ -48,11 +49,11 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>com.bank.domain.User</value>
-				<value>com.bank.domain.Customer</value>
+				
 				<value>com.bank.domain.Address</value>
 				<value>com.bank.domain.Authority</value>
 				<value>com.bank.domain.CalendarInfo</value>
-				<value>com.bank.domain.Accounts</value>
+				
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -65,6 +66,7 @@
 				<prop key="hibernate.show_sql">true</prop>
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
 				<prop key="hibernate.connection.autocommit">true</prop>
+				<!--  <prop key="hibernate.current_session_context_class=thread">true</prop>-->
 			</props>
 		</property>
 		<property name="packagesToScan">
@@ -82,7 +84,7 @@
 	</bean>
 	<bean id="multipartResolver"
 	class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
-	
+	<context:annotation-config />
 	<import resource="application-config.xml"/>
 
 </beans>

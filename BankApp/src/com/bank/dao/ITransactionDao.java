@@ -1,5 +1,7 @@
 package com.bank.dao;
 
-public interface ITransactionDao {
+import com.bank.beans.AddReceiverForm;
 
+public interface ITransactionDao {
+	
 }

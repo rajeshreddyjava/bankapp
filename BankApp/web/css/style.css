@@ -192,6 +192,7 @@ legend {
 }
 
 .correct {
+	background-image : url("../images/confirmed.jpg");
 	background: #56d800;
 	border: 3px solid #008000;
 }
