@@ -74,6 +74,11 @@
 		<put-attribute name="title" value="Error" />
 		<put-attribute name="body" value="/WEB-INF/jsp/error.jsp"/>
 	</definition>
+		<definition name="error" extends="base.definition">
+		<put-attribute name="title" value="Error" />
+		<put-attribute name="body" value="/WEB-INF/jsp/error.jsp"/>
+	</definition>
+	
 
 
 	<definition name="home" extends="base.definition">

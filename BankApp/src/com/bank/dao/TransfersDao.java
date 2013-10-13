@@ -1,5 +1,7 @@
 package com.bank.dao;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -10,14 +12,18 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bank.beans.AddReceiverForm;
+import com.bank.beans.AddressForm;
 import com.bank.controllers.AccountsController;
 import com.bank.domain.Accounts;
 import com.bank.domain.Customer;
+import com.bank.domain.TransferAccounts;
+import com.bank.domain.TransferAccountsKey;
 import com.bank.exceptions.BankDaoException;
+import com.bank.exceptions.BankRuntimeException;
+import com.bank.util.BankUtils;
 
 @Repository
 public class TransfersDao implements ITransfersDao {
@@ -30,26 +36,33 @@ public class TransfersDao implements ITransfersDao {
 
 	@Override
 	@Transactional
-	public AddReceiverForm getAccountInfo(String accountNumber) {
+	public AddReceiverForm getReciverAccountInfo(String accountNumber) {
 		Session session = sessionFactory.getCurrentSession();
-		AddReceiverForm receiverForm = null;
+		AddReceiverForm receiverForm = new AddReceiverForm();
 		try{
 			//session.beginTransaction();
 			
-			Query query = session.createQuery("select c.firstName, c.lastName, c.zipCode,  a.accountNumber from Customer c inner join c.accounts a where a.accountNumber =?  ");
+			Query query = session.createQuery("select c.firstName, c.lastName,  ad.zipCode from Accounts a inner join a.customer c inner join c.address ad where a.accountNumber =?  ");
 			query.setParameter(0, accountNumber);
 			List list = query.list();
 			Customer customer = null;
 			Accounts account = null;
 			 receiverForm  = new AddReceiverForm();
 			Iterator it = list.iterator();
+			String firstName = null, lastName = null, zipCode = null;
 			while(it.hasNext()){
 				Object[] objects = (Object[])it.next();
-				 customer = (Customer)objects[1];
-				// account = (Accounts)objects[1];
+				 firstName = (String)objects[0];
+				 lastName = (String)objects[1];
+				 zipCode = (String)objects[2];
 			}
+			AddressForm address = new AddressForm();
+			address.setZipCode(zipCode);
+			receiverForm.setAddress(address);
+			receiverForm.setAccountNumber(accountNumber);
+			receiverForm.setFirstName(firstName);
+			receiverForm.setLastName(lastName);
 			
-			populateReceiverForm(receiverForm, account, customer);
 			//session.getTransaction().commit();
 		}
 		catch(DataAccessException dae){
@@ -63,24 +76,14 @@ public class TransfersDao implements ITransfersDao {
 	public boolean isAccountAlreadyAdded(String accountNumber){
 		
 		Session session = sessionFactory.getCurrentSession();
-		AddReceiverForm receiverForm = null;
+		AddReceiverForm receiverForm = new AddReceiverForm();
 		try{
 			//session.beginTransaction();
-			Query query = session.createQuery("select c.firstName, c.lastName,  a.accountNumber from Customer c inner join c.accounts a where a.accountNumber =?  ");
+			
+			Query query = session.createQuery("  ");
 			query.setParameter(0, accountNumber);
 			List list = query.list();
-			Customer customer = null;
-			Accounts account = null;
-			 receiverForm  = new AddReceiverForm();
-			Iterator it = list.iterator();
-			while(it.hasNext()){
-				Object[] objects = (Object[])it.next();
-				 customer = (Customer)objects[1];
-				// account = (Accounts)objects[1];
-			}
 			
-			populateReceiverForm(receiverForm, account, customer);
-			//session.getTransaction().commit();
 		}
 		catch(DataAccessException dae){
 			log.error(" Error In TransfersDao -> isAccountExist(): " );
@@ -89,10 +92,57 @@ public class TransfersDao implements ITransfersDao {
 			return false;
 	}
 	
-	public void populateReceiverForm(AddReceiverForm receiverForm,Accounts account, Customer customer){
-		//receiverForm.setAccountNumber(account.getAccountNumber());
-		//receiverForm.setAddress(customer.getAddress());
-		receiverForm.setFirstName(customer.getFirstName());
+	
+	@Override
+	@Transactional
+	public String getUserId(String accountNumber) {
+		String userId = null;
+		Session session = sessionFactory.getCurrentSession();
+		try{
+			Query  query = session.createQuery("select c.userId from Customer c inner join c.accounts a where a.accountNumber =? " );
+			query.setParameter(0, accountNumber);
+			List list = query.list();
+			if(list.size()>1)
+				throw new BankRuntimeException("One account has two userids..something went wrong");
+			else
+				userId = (String)list.get(0);
+		}
+		catch(DataAccessException e){
+		throw new BankDaoException(e.toString());
+		}
+		finally{
+			//session.close();
+		}
+		return userId;
+	}
+
+	@Override
+	public void addReceiver(AddReceiverForm addReceiverForm)
+			throws DataAccessException {
+		Session session = sessionFactory.getCurrentSession();
+		try{
+			session.beginTransaction();
+			TransferAccounts transferAccounts = new TransferAccounts();
+			TransferAccountsKey transferAccountsKey = new TransferAccountsKey();
+			transferAccountsKey.setUserId(BankUtils.getCurrentUserId());
+			transferAccountsKey.setAccountNumberAdded(addReceiverForm.getAccountNumber());
+			transferAccounts.setTransferAccountsKey(transferAccountsKey);
+			transferAccounts.setNickName(addReceiverForm.getNickName());
+			transferAccounts.setOtherNotes("Receiver Added");
+			transferAccounts.setAddTimestamp(Calendar.getInstance().getTime());
+			transferAccounts.setAddUser("bank-app");
+			transferAccounts.setUpdateTimestamp(Calendar.getInstance().getTime());
+			transferAccounts.setUpdateUser("bank-app");
+			session.save(transferAccounts);
+			session.getTransaction().commit();
+			
+		}
+		catch(DataAccessException ex){
+			throw new BankDaoException(ex.toString());
+		}
+		finally{
+			session.close();
+		}
 	}
 
 
