@@ -34,7 +34,7 @@ public class DepositController {
 	private static final String DEPOSIT = "deposit";
 	private static final String DEPOSIT_CONFIRM = "deposit_confirm";
 	private static final String HOME = "home";
-	private static final String ERROR = "deposit_error";
+	private static final String ERROR = "error";
 	private IAccountsService accountsService;
 	
 	@InitBinder

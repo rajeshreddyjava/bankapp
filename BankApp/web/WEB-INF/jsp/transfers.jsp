@@ -7,20 +7,43 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 </head>
 <body>
-	<form:form>
+	<form:form commandName="transferForm">
+	<fieldset>
+	<legend>Transfers</legend>
 		<table>
 		<tr>
 		<td>
 		    <label>From: </label>
-		    </td>
+		</td>
 		    <td>
-			<select>
-				<option>Checking</option>
-				<option>Savings</option>
-			</select>
+			<form:select path="fromAccountType" id="fromAccountType">
+			<form:option value="checking"/>
+			<form:option value="savings"/>
+			</form:select>
 			</td><td><a href="user/transfers/addReceiver.do" >Add Receiver</a></td>
 		</tr>
+		<tr> 
+		<td> To :</td>
+		<td> <form:select path="toAccountNumber" id="toAccountNumber">
+			<form:option value="Select----"/>
+			<form:options items="${receiversMap}"/>
+			</form:select> </td>
+		</tr>
+		<tr>
+		<td> Scheduled Date:</td>
+		<td> <form:input path="scheduledDate" class="date-picker" id = "scheduleDate"/>
+		 </td>
+		</tr>
+		<tr>
+		<td>
+		</td>
+		<td>
+		<p><input type="submit" value="Deposit" name="_deposit"/>&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="submit" value="Cancel" name="_cancel"/></p>
+		</td>
+		</tr>
 		</table>
+	</fieldset>
 	</form:form>
 
 </body>

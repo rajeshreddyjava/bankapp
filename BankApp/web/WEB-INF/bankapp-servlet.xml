@@ -24,7 +24,7 @@
 			</value>
 		</property>
 	  </bean>
-	<!--    <bean id="tilesConfigurer"
+	    <bean id="tilesConfigurer"
 		class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
 		<property name="definitions">
 			<list>
@@ -33,7 +33,7 @@
 			</list>
 		</property>
 	</bean>
-	-->
+	
 	
 	 
 	<!-- <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 

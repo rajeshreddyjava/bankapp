@@ -1,5 +1,6 @@
 package com.bank.dao;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
@@ -14,7 +15,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.bank.beans.AddReceiverForm;
+import com.bank.beans.Receiver;
 import com.bank.beans.AddressForm;
 import com.bank.controllers.AccountsController;
 import com.bank.domain.Accounts;
@@ -36,9 +37,9 @@ public class TransfersDao implements ITransfersDao {
 
 	@Override
 	@Transactional
-	public AddReceiverForm getReciverAccountInfo(String accountNumber) {
+	public Receiver getReciverAccountInfo(String accountNumber) {
 		Session session = sessionFactory.getCurrentSession();
-		AddReceiverForm receiverForm = new AddReceiverForm();
+		Receiver receiverForm = new Receiver();
 		try{
 			//session.beginTransaction();
 			
@@ -47,7 +48,7 @@ public class TransfersDao implements ITransfersDao {
 			List list = query.list();
 			Customer customer = null;
 			Accounts account = null;
-			 receiverForm  = new AddReceiverForm();
+			 receiverForm  = new Receiver();
 			Iterator it = list.iterator();
 			String firstName = null, lastName = null, zipCode = null;
 			while(it.hasNext()){
@@ -76,7 +77,7 @@ public class TransfersDao implements ITransfersDao {
 	public boolean isAccountAlreadyAdded(String accountNumber){
 		
 		Session session = sessionFactory.getCurrentSession();
-		AddReceiverForm receiverForm = new AddReceiverForm();
+		Receiver receiverForm = new Receiver();
 		try{
 			//session.beginTransaction();
 			
@@ -117,14 +118,14 @@ public class TransfersDao implements ITransfersDao {
 	}
 
 	@Override
-	public void addReceiver(AddReceiverForm addReceiverForm)
+	public void addReceiver(Receiver addReceiverForm, String userid)
 			throws DataAccessException {
 		Session session = sessionFactory.getCurrentSession();
 		try{
-			session.beginTransaction();
+			//session.beginTransaction();
 			TransferAccounts transferAccounts = new TransferAccounts();
 			TransferAccountsKey transferAccountsKey = new TransferAccountsKey();
-			transferAccountsKey.setUserId(BankUtils.getCurrentUserId());
+			transferAccountsKey.setUserId(userid);
 			transferAccountsKey.setAccountNumberAdded(addReceiverForm.getAccountNumber());
 			transferAccounts.setTransferAccountsKey(transferAccountsKey);
 			transferAccounts.setNickName(addReceiverForm.getNickName());
@@ -134,16 +135,44 @@ public class TransfersDao implements ITransfersDao {
 			transferAccounts.setUpdateTimestamp(Calendar.getInstance().getTime());
 			transferAccounts.setUpdateUser("bank-app");
 			session.save(transferAccounts);
-			session.getTransaction().commit();
+			//session.getTransaction().commit();
 			
 		}
 		catch(DataAccessException ex){
 			throw new BankDaoException(ex.toString());
 		}
 		finally{
-			session.close();
+			//session.close();
 		}
 	}
+
+	@Override
+	public List<Receiver> getReceiverList(String userId) {
+		List<Receiver> receiverList = null;
+		try{
+			Session session = sessionFactory.getCurrentSession();
+			Query query = session.createQuery("from TransferAccounts ta where user_id = ?");
+			query.setParameter(0, userId);
+			List<TransferAccounts> list = query.list();
+			if(list!=null){
+				receiverList = new ArrayList<Receiver>();
+				Receiver receiver =  null;
+				for(TransferAccounts transferAccount : list){
+					receiver = new Receiver();
+					receiver.setAccountNumber(transferAccount.getTransferAccountsKey().getAccountNumberAdded());
+					receiver.setNickName(transferAccount.getNickName());
+					receiverList.add(receiver);
+				}
+			}
+		}
+		catch(DataAccessException ex)
+		{
+			throw new BankDaoException(ex.toString());
+		}
+		return receiverList;
+	}
+	
+	
 
 
 }

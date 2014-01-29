@@ -5,8 +5,12 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
 @Table(name = "TRANSFERS_ACCOUNTS")
@@ -15,13 +19,15 @@ public class TransferAccounts {
 	@Id
 	@Embedded
 	private TransferAccountsKey transferAccountsKey;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column
+	private int transfer_accounts_id;
 	@Column(name="NICK_NAME")
 	private String nickName;
 	@Column(name = "DATE_ADDED")
 	private Date dateAdded;
 	@Column(name="OTHER_NOTES")
 	private String otherNotes;
-	
 	@Column(name="ADD_TS")
 	private Date addTimestamp;
 	@Column(name="ADD_USR")

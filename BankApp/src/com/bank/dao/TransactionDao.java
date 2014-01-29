@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.bank.beans.AddReceiverForm;
+import com.bank.beans.Receiver;
 import com.bank.controllers.AccountsController;
 import com.bank.domain.Accounts;
 import com.bank.domain.Customer;

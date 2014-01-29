@@ -3,7 +3,7 @@ package com.bank.validator;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import com.bank.beans.AddReceiverForm;
+import com.bank.beans.Receiver;
 
 public class BankValidator implements Validator{
 
@@ -15,10 +15,10 @@ public class BankValidator implements Validator{
 
 	@Override
 	public void validate(Object object, Errors errors) {
-		AddReceiverForm addReceiverForm = (AddReceiverForm)object;
+		Receiver addReceiverForm = (Receiver)object;
 		
 	}
-	public String validateReceiverInfo(AddReceiverForm addReceiverForm){
+	public String validateReceiverInfo(Receiver addReceiverForm){
 		
 		return "";
 	}

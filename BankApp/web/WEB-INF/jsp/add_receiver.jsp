@@ -23,7 +23,7 @@
 				</tr>
 				<tr>
 					<td>Nick Name:</td>
-					<td><form:input path=="nickName" id ="nickName"/></td>
+					<td><form:input path="nickName" id ="nickName"/></td>
 				</tr>
 				<tr>
 					<td>Account Number:</td>
