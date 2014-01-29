@@ -1,0 +1,90 @@
+[WARN] 2013-10-20 13:38:03,814 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.BalanceHistoryKey
+[WARN] 2013-10-20 13:38:03,826 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.BalanceHistoryKey
+[WARN] 2013-10-20 13:38:03,827 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.TransferAccountsKey
+[WARN] 2013-10-20 13:38:03,877 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.TransferAccountsKey
+[ERROR] 2013-10-20 13:38:05,640 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table ADDRESSES add index FKDA388B82C7C83E92 (USER_ID), add constraint FKDA388B82C7C83E92 foreign key (USER_ID) references CUSTOMER (USER_ID)
+[ERROR] 2013-10-20 13:38:05,641 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Cannot add or update a child row: a foreign key constraint fails (`bank`.`#sql-890_10`, CONSTRAINT `FKDA388B82C7C83E92` FOREIGN KEY (`user_id`) REFERENCES `customer` (`user_id`))
+[ERROR] 2013-10-20 13:38:05,657 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table BALANCE_HISTORY add index account_number (account_number), add constraint account_number foreign key (account_number) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-10-20 13:38:05,657 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-890_10' (errno: 150)
+[ERROR] 2013-10-20 13:38:05,681 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table TRANSACTIONS add index FKFE9871554FB2464A (account_ACCOUNT_ID), add constraint FKFE9871554FB2464A foreign key (account_ACCOUNT_ID) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-10-20 13:38:05,683 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-890_10' (errno: 150)
+[INFO] 2013-10-20 13:38:06,052 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Initializing Tiles2 application context. . .
+[INFO] 2013-10-20 13:38:06,054 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Finished initializing Tiles2 application context.
+[INFO] 2013-10-20 13:38:06,109 org.apache.tiles.access.TilesAccess setContainer - Publishing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
+[WARN] 2013-10-20 13:38:06,513 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.BalanceHistoryKey
+[WARN] 2013-10-20 13:38:06,514 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.BalanceHistoryKey
+[WARN] 2013-10-20 13:38:06,515 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.TransferAccountsKey
+[WARN] 2013-10-20 13:38:06,515 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.TransferAccountsKey
+[ERROR] 2013-10-20 13:38:06,800 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table ADDRESSES add index FKDA388B82C7C83E92 (USER_ID), add constraint FKDA388B82C7C83E92 foreign key (USER_ID) references CUSTOMER (USER_ID)
+[ERROR] 2013-10-20 13:38:06,800 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Cannot add or update a child row: a foreign key constraint fails (`bank`.`#sql-890_11`, CONSTRAINT `FKDA388B82C7C83E92` FOREIGN KEY (`user_id`) REFERENCES `customer` (`user_id`))
+[ERROR] 2013-10-20 13:38:06,806 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table BALANCE_HISTORY add index account_number (account_number), add constraint account_number foreign key (account_number) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-10-20 13:38:06,806 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-890_11' (errno: 150)
+[ERROR] 2013-10-20 13:38:06,816 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table TRANSACTIONS add index FKFE9871554FB2464A (account_ACCOUNT_ID), add constraint FKFE9871554FB2464A foreign key (account_ACCOUNT_ID) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-10-20 13:38:06,816 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-890_11' (errno: 150)
+[INFO] 2013-10-20 13:38:06,838 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Initializing Tiles2 application context. . .
+[INFO] 2013-10-20 13:38:06,838 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Finished initializing Tiles2 application context.
+[INFO] 2013-10-20 13:38:06,839 org.apache.tiles.access.TilesAccess setContainer - Publishing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
+[INFO] 2013-10-20 13:39:33,240 com.bank.controllers.WelcomeController login - showing login page..
+[INFO] 2013-10-20 13:39:39,752 com.bank.controllers.WelcomeController printWelcome - Printing welcome message after successful login...
+[INFO] 2013-10-20 13:39:41,651 com.bank.controllers.TransfersController showTransfers - In Transfers Controller - showTransfers
+[INFO] 2013-10-20 13:39:44,493 com.bank.controllers.TransfersController cancelTransfers - In Transfers Controller - cancelTransfer
+[INFO] 2013-10-20 13:39:51,332 com.bank.controllers.WelcomeController printWelcome - Printing welcome message after successful login...
+[INFO] 2013-10-20 13:41:08,236 org.apache.tiles.access.TilesAccess setContainer - Removing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
+[INFO] 2013-10-20 13:41:08,299 org.apache.tiles.access.TilesAccess setContainer - Removing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
+[WARN] 2013-10-20 13:41:11,921 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.BalanceHistoryKey
+[WARN] 2013-10-20 13:41:11,923 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.BalanceHistoryKey
+[WARN] 2013-10-20 13:41:11,924 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.TransferAccountsKey
+[WARN] 2013-10-20 13:41:11,924 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.TransferAccountsKey
+[ERROR] 2013-10-20 13:41:12,759 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table ADDRESSES add index FKDA388B82C7C83E92 (USER_ID), add constraint FKDA388B82C7C83E92 foreign key (USER_ID) references CUSTOMER (USER_ID)
+[ERROR] 2013-10-20 13:41:12,760 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Cannot add or update a child row: a foreign key constraint fails (`bank`.`#sql-890_12`, CONSTRAINT `FKDA388B82C7C83E92` FOREIGN KEY (`user_id`) REFERENCES `customer` (`user_id`))
+[ERROR] 2013-10-20 13:41:12,766 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table BALANCE_HISTORY add index account_number (account_number), add constraint account_number foreign key (account_number) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-10-20 13:41:12,767 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-890_12' (errno: 150)
+[ERROR] 2013-10-20 13:41:12,773 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table TRANSACTIONS add index FKFE9871554FB2464A (account_ACCOUNT_ID), add constraint FKFE9871554FB2464A foreign key (account_ACCOUNT_ID) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-10-20 13:41:12,773 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-890_12' (errno: 150)
+[INFO] 2013-10-20 13:41:13,072 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Initializing Tiles2 application context. . .
+[INFO] 2013-10-20 13:41:13,075 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Finished initializing Tiles2 application context.
+[INFO] 2013-10-20 13:41:13,134 org.apache.tiles.access.TilesAccess setContainer - Publishing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
+[WARN] 2013-10-20 13:41:13,625 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.BalanceHistoryKey
+[WARN] 2013-10-20 13:41:13,626 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.BalanceHistoryKey
+[WARN] 2013-10-20 13:41:13,626 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.TransferAccountsKey
+[WARN] 2013-10-20 13:41:13,626 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.TransferAccountsKey
+[ERROR] 2013-10-20 13:41:13,868 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table ADDRESSES add index FKDA388B82C7C83E92 (USER_ID), add constraint FKDA388B82C7C83E92 foreign key (USER_ID) references CUSTOMER (USER_ID)
+[ERROR] 2013-10-20 13:41:13,869 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Cannot add or update a child row: a foreign key constraint fails (`bank`.`#sql-890_13`, CONSTRAINT `FKDA388B82C7C83E92` FOREIGN KEY (`user_id`) REFERENCES `customer` (`user_id`))
+[ERROR] 2013-10-20 13:41:13,875 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table BALANCE_HISTORY add index account_number (account_number), add constraint account_number foreign key (account_number) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-10-20 13:41:13,876 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-890_13' (errno: 150)
+[ERROR] 2013-10-20 13:41:13,883 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table TRANSACTIONS add index FKFE9871554FB2464A (account_ACCOUNT_ID), add constraint FKFE9871554FB2464A foreign key (account_ACCOUNT_ID) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-10-20 13:41:13,884 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-890_13' (errno: 150)
+[INFO] 2013-10-20 13:41:13,920 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Initializing Tiles2 application context. . .
+[INFO] 2013-10-20 13:41:13,921 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Finished initializing Tiles2 application context.
+[INFO] 2013-10-20 13:41:13,922 org.apache.tiles.access.TilesAccess setContainer - Publishing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
+[INFO] 2013-10-20 13:42:40,222 org.apache.tiles.access.TilesAccess setContainer - Removing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
+[INFO] 2013-10-20 13:42:40,235 org.apache.tiles.access.TilesAccess setContainer - Removing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
+[WARN] 2013-10-20 13:42:45,509 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.BalanceHistoryKey
+[WARN] 2013-10-20 13:42:45,512 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.BalanceHistoryKey
+[WARN] 2013-10-20 13:42:45,512 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.TransferAccountsKey
+[WARN] 2013-10-20 13:42:45,513 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.TransferAccountsKey
+[ERROR] 2013-10-20 13:42:46,237 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table ADDRESSES add index FKDA388B82C7C83E92 (USER_ID), add constraint FKDA388B82C7C83E92 foreign key (USER_ID) references CUSTOMER (USER_ID)
+[ERROR] 2013-10-20 13:42:46,237 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Cannot add or update a child row: a foreign key constraint fails (`bank`.`#sql-890_14`, CONSTRAINT `FKDA388B82C7C83E92` FOREIGN KEY (`user_id`) REFERENCES `customer` (`user_id`))
+[ERROR] 2013-10-20 13:42:46,244 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table BALANCE_HISTORY add index account_number (account_number), add constraint account_number foreign key (account_number) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-10-20 13:42:46,245 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-890_14' (errno: 150)
+[ERROR] 2013-10-20 13:42:46,250 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table TRANSACTIONS add index FKFE9871554FB2464A (account_ACCOUNT_ID), add constraint FKFE9871554FB2464A foreign key (account_ACCOUNT_ID) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-10-20 13:42:46,251 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-890_14' (errno: 150)
+[INFO] 2013-10-20 13:42:46,535 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Initializing Tiles2 application context. . .
+[INFO] 2013-10-20 13:42:46,537 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Finished initializing Tiles2 application context.
+[INFO] 2013-10-20 13:42:46,591 org.apache.tiles.access.TilesAccess setContainer - Publishing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
+[WARN] 2013-10-20 13:42:47,027 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.BalanceHistoryKey
+[WARN] 2013-10-20 13:42:47,028 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.BalanceHistoryKey
+[WARN] 2013-10-20 13:42:47,029 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override equals(): com.bank.domain.TransferAccountsKey
+[WARN] 2013-10-20 13:42:47,029 org.hibernate.mapping.RootClass checkCompositeIdentifier - composite-id class does not override hashCode(): com.bank.domain.TransferAccountsKey
+[ERROR] 2013-10-20 13:42:47,205 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table ADDRESSES add index FKDA388B82C7C83E92 (USER_ID), add constraint FKDA388B82C7C83E92 foreign key (USER_ID) references CUSTOMER (USER_ID)
+[ERROR] 2013-10-20 13:42:47,205 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Cannot add or update a child row: a foreign key constraint fails (`bank`.`#sql-890_15`, CONSTRAINT `FKDA388B82C7C83E92` FOREIGN KEY (`user_id`) REFERENCES `customer` (`user_id`))
+[ERROR] 2013-10-20 13:42:47,211 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table BALANCE_HISTORY add index account_number (account_number), add constraint account_number foreign key (account_number) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-10-20 13:42:47,211 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-890_15' (errno: 150)
+[ERROR] 2013-10-20 13:42:47,217 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Unsuccessful: alter table TRANSACTIONS add index FKFE9871554FB2464A (account_ACCOUNT_ID), add constraint FKFE9871554FB2464A foreign key (account_ACCOUNT_ID) references ACCOUNTS (ACCOUNT_ID)
+[ERROR] 2013-10-20 13:42:47,218 org.hibernate.tool.hbm2ddl.SchemaUpdate execute - Can't create table 'bank.#sql-890_15' (errno: 150)
+[INFO] 2013-10-20 13:42:47,242 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Initializing Tiles2 application context. . .
+[INFO] 2013-10-20 13:42:47,243 org.apache.tiles.context.AbstractTilesApplicationContextFactory createFactory - Finished initializing Tiles2 application context.
+[INFO] 2013-10-20 13:42:47,244 org.apache.tiles.access.TilesAccess setContainer - Publishing TilesContext for context: org.springframework.web.servlet.view.tiles2.SpringTilesApplicationContextFactory$SpringWildcardServletTilesApplicationContext
+[INFO] 2013-10-20 13:42:47,901 com.bank.controllers.TransfersController showTransfers - In Transfers Controller - showTransfers
+[INFO] 2013-10-20 13:42:50,555 com.bank.controllers.TransfersController cancelTransfers - In Transfers Controller - cancelTransfer
+[INFO] 2013-10-20 13:42:52,774 com.bank.controllers.TransfersController showTransfers - In Transfers Controller - showTransfers
